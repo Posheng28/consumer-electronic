@@ -1,0 +1,7 @@
+# 第三方券商研究 PDF（版權所有，不公開）
+*.pdf
+
+# 暫存
+*.tmp
+.DS_Store
+Thumbs.db
