@@ -143,6 +143,21 @@ td.c,th.c{text-align:center}td.r,th.r{text-align:right}
 .scnode .scn-r{font-size:.74rem;color:var(--tx2)}
 .scnode .scn-l{font-size:.84rem;color:var(--tx);margin:8px 0}
 
+/* ===== watchlist cards ===== */
+.scards{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));margin-bottom:16px}
+.scard{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--blue);border-radius:10px;padding:12px 14px;transition:border-color .15s}
+.scard:hover{border-color:var(--blue)}
+.scard .sc-top{display:flex;align-items:baseline;gap:7px;margin-bottom:6px;flex-wrap:wrap}
+.scard .sc-nm{font-weight:700;color:var(--tx3);font-size:.95rem}
+.scard .sc-tag{font-size:.66rem;font-weight:700;margin-left:auto;padding:1px 7px;border-radius:9px}
+.scard .sc-codes{font-size:.78rem;color:var(--tx2);margin-bottom:6px}
+.scard .sc-codes b{color:var(--tx);font-weight:600}
+.scard .sc-desc{font-size:.8rem;color:var(--tx2);line-height:1.5}
+.scard .sc-stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.scard .sc-stats div{font-size:.72rem;color:var(--tx2)}
+.scard .sc-stats b{display:block;font-size:.95rem;color:var(--tx3);font-weight:800;line-height:1.2}
+.cd-badge{font-size:.7rem;color:var(--blue);background:var(--bg3);border:1px solid var(--bd);border-radius:5px;padding:1px 6px;font-weight:600}
+
 /* ===== stock module ===== */
 .stock-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .stock-tab{padding:8px 16px;border-radius:9px;border:1px solid var(--bd);background:var(--bg2);color:var(--tx2);font-size:.86rem;font-weight:600;cursor:pointer;transition:all .15s}
@@ -521,19 +536,16 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 
   <h3>5R.4 台股人形機器人觀察清單（依零組件分類）</h3>
   <div class="src" style="display:block">彙整自：群益《2026 人形機器人產業展望》、福邦《機器人 2026 產業報告》、國票《人型機器人關節核心零件》、台新投顧、工研院 CES 2026。EPS/評等為各券商原始預估，僅供研究，非投資建議。</div>
-  <div class="scroll"><table>
-    <thead><tr><th>零組件</th><th>代表台廠（代號）</th><th>角色 / 重點</th></tr></thead>
-    <tbody>
-      <tr><td><b>諧波 / RV 減速機</b></td><td>上銀 2049、台灣精銳 4583、盟立 2464（盟英）、鈞興-KY 4571、和大 1536、宇隆 4582</td><td>每台 40–50 個關節都要減速機；上銀諧波送樣認證中，台灣精銳 MA 系列 13mm 可上機器手</td></tr>
-      <tr><td><b>行星滾柱螺桿 / 滾珠螺桿</b></td><td>上銀 2049、全球傳動 4540、直得 1597</td><td>PRS 為雙足發力標準、最稀缺高毛利件（占 BOM 12–16%）；全球傳動微型線性執行器切入靈巧手五指</td></tr>
-      <tr><td><b>無框力矩馬達 / 驅動 / 編碼器</b></td><td>大銀微 4576、台達電 2308、新唐 4919、原相 3227</td><td>大銀微供無框力矩馬達/伺服/驅動；新唐控制器 IC（客戶宇樹、小米）；台達電編碼器＋電池模組</td></tr>
-      <tr><td><b>關節模組 / 靈巧手</b></td><td>上銀＋大銀微 2049/4576、氣立 4555</td><td>手臂關節模組（減速機＋馬達＋驅動整合）；氣立兩/三指仿生手已送樣</td></tr>
-      <tr><td><b>散熱（液冷 / VC）</b></td><td>雙鴻 3324、台達電 2308</td><td>台新：Tesla 唯一導入主動式散熱，散熱價值占比首度超越傳統減速器；關節&gt;110℃ 退磁是量產痛點</td></tr>
-      <tr><td><b>軟板 / 線材</b></td><td>信邦 6243、貿聯-KY 3665</td><td>FPCB 取代銅線解決日均 2 萬次彎折斷裂；線束/電束受惠</td></tr>
-      <tr><td><b>整機組裝 / 系統整合</b></td><td>鴻海 2317、和碩 4938、台達電 2308、所羅門 2359、達明 4585 / 廣明 6188、中光電 5371</td><td>所羅門 3D 機器視覺＋physical agent 平台（群益首選）；達明協作機器人全球前 5；中光電無人機</td></tr>
-      <tr><td><b>視覺感測鏡頭</b></td><td>亞光 3019、佳能</td><td>機器視覺鏡頭（客戶 Agility）</td></tr>
-    </tbody>
-  </table></div>
+  <div class="scards">
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">諧波 / RV 減速機</span></div><div class="sc-codes"><b>上銀 2049</b> · <b>台灣精銳 4583</b> · <b>盟立 2464</b> · <b>鈞興 4571</b> · <b>和大 1536</b> · <b>宇隆 4582</b></div><div class="sc-desc">每台 40–50 個關節都要；上銀諧波認證中、台灣精銳 13mm 可上機器手</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">行星滾柱螺桿 / 螺桿</span><span class="sc-tag by">最稀缺</span></div><div class="sc-codes"><b>上銀 2049</b> · <b>全球傳動 4540</b> · <b>直得 1597</b></div><div class="sc-desc">PRS＝雙足發力標準、高毛利（占 BOM 12–16%）；全球傳動切入靈巧手</div></div>
+    <div class="scard" style="border-left-color:var(--blue)"><div class="sc-top"><span class="sc-nm">無框馬達 / 驅動 / 編碼器</span></div><div class="sc-codes"><b>大銀微 4576</b> · <b>台達電 2308</b> · <b>新唐 4919</b> · <b>原相 3227</b></div><div class="sc-desc">大銀微供無框力矩馬達；新唐控制 IC（客戶宇樹、小米）</div></div>
+    <div class="scard" style="border-left-color:var(--blue)"><div class="sc-top"><span class="sc-nm">關節模組 / 靈巧手</span></div><div class="sc-codes"><b>上銀 2049</b> · <b>大銀微 4576</b> · <b>氣立 4555</b></div><div class="sc-desc">減速機＋馬達＋驅動整合；氣立仿生手已送樣</div></div>
+    <div class="scard" style="border-left-color:var(--cyan)"><div class="sc-top"><span class="sc-nm">散熱（液冷 / VC）</span><span class="sc-tag bb">價值升</span></div><div class="sc-codes"><b>雙鴻 3324</b> · <b>台達電 2308</b></div><div class="sc-desc">Tesla 導入主動式散熱，價值占比首超減速器；關節過熱退磁是痛點</div></div>
+    <div class="scard" style="border-left-color:var(--cyan)"><div class="sc-top"><span class="sc-nm">軟板 / 線材</span></div><div class="sc-codes"><b>信邦 6243</b> · <b>貿聯-KY 3665</b></div><div class="sc-desc">FPCB 取代銅線，解決日均 2 萬次彎折斷裂</div></div>
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">整機 / 系統整合</span><span class="sc-tag bg">群益首選</span></div><div class="sc-codes"><b>所羅門 2359</b> · <b>鴻海 2317</b> · <b>達明 4585</b> · <b>廣明 6188</b> · <b>中光電 5371</b> · <b>和碩 4938</b></div><div class="sc-desc">所羅門 3D 視覺＋agent 平台；達明協作機器人全球前 5</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">視覺感測鏡頭</span></div><div class="sc-codes"><b>亞光 3019</b></div><div class="sc-desc">機器視覺鏡頭（客戶 Agility）</div></div>
+  </div>
   <div class="grid g2">
     <div class="callout co-green" style="margin-top:0"><span class="ct">群益「人形機器人概念股首選」</span><b>所羅門 2359</b>（視覺/平台）、<b>上銀 2049</b>（減速機/螺桿）、<b>台灣精銳 4583</b>（減速機）；無人機受惠加 <b>中光電 5371</b>。福邦估單機硬體 BOM 約 US$50,666，行星滾柱螺桿(16%)＋六維力感測器(14%)＋無框馬達(13%)為前三大。</div>
     <div class="callout co-red" style="margin-top:0"><span class="ct">⚠ 台廠尚未切入的缺口（潛在題材）</span>
@@ -599,17 +611,14 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   </div>
   <h3>5E.3 智慧家庭 / 邊緣 AI 終端觀察清單</h3>
   <p>智慧家庭是 edge AI 最貼近一般消費者的落地場景——CES 2026 主軸 <em>Gemini@Everywhere</em>，Google/Amazon/Apple/Samsung 把 AI 助理塞進家電、音箱、攝影機。台股受惠主要在<strong>連接 SoC、語音感測、安防邊緣視覺、MCU 與閘道器</strong>。</p>
-  <div class="scroll"><table>
-    <thead><tr><th>環節</th><th>代表台廠（代號）</th><th>智慧家庭 / 邊緣 AI 角色</th></tr></thead>
-    <tbody>
-      <tr><td><b>連接 SoC（核心受惠）</b></td><td>瑞昱 2379、聯發科 2454</td><td>Wi-Fi 6/7、BT、音訊 codec；瑞昱 Ameba SoC 內建 NPU(~0.4 TOPS) 做邊緣 AI 相機/語音、聯發科 Genio AIoT 平台</td></tr>
-      <tr><td><b>安防 / 邊緣視覺（純度最高）</b></td><td>晶睿 3454</td><td>網路攝影機＋邊緣 AI 影像分析（VORTEX、語意搜尋）；台股最純的「裝置端 edge AI」之一</td></tr>
-      <tr><td><b>語音 / 音訊感測</b></td><td>鈺太 6679、美律 2439</td><td>MEMS 數位麥克風、喇叭/麥克風陣列——語音是 edge AI 的前端入口</td></tr>
-      <tr><td><b>MCU / 控制</b></td><td>盛群 6202、新唐 4919</td><td>家電、遙控、感測節點低功耗 MCU；新唐含併購 Panasonic 半導體、語音/安全 MCU</td></tr>
-      <tr><td><b>網通 ODM / 閘道器（Wi-Fi 7 升級財）</b></td><td>啟碁 6285、智易 3596、中磊 5388、明泰 3380、正文 4906</td><td>家用 CPE、mesh Wi-Fi、閘道器——偏「連接升級」題材，非 AI 運算財，宜區分</td></tr>
-      <tr><td><b>電源 / 樓宇 / 邊緣平台</b></td><td>台達電 2308、研華 2395</td><td>智慧樓宇/能源管理、邊緣 IoT 平台與閘道</td></tr>
-    </tbody>
-  </table></div>
+  <div class="scards">
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">連接 SoC</span><span class="sc-tag bg">核心受惠</span></div><div class="sc-codes"><b>瑞昱 2379</b> · <b>聯發科 2454</b></div><div class="sc-desc">Wi-Fi 6/7、藍牙、音訊 codec；瑞昱 Ameba 內建 NPU 做邊緣 AI 相機/語音</div></div>
+    <div class="scard" style="border-left-color:var(--blue)"><div class="sc-top"><span class="sc-nm">安防 / 邊緣視覺</span><span class="sc-tag bb">純度最高</span></div><div class="sc-codes"><b>晶睿 3454</b></div><div class="sc-desc">網路攝影機＋邊緣 AI 影像分析；台股最純的「裝置端 edge AI」之一</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">語音 / 音訊感測</span></div><div class="sc-codes"><b>鈺太 6679</b> · <b>美律 2439</b></div><div class="sc-desc">MEMS 麥克風、喇叭陣列——語音是 edge AI 的前端入口</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">MCU / 控制</span></div><div class="sc-codes"><b>盛群 6202</b> · <b>新唐 4919</b></div><div class="sc-desc">家電、遙控、感測節點低功耗 MCU；新唐含 Panasonic 半導體</div></div>
+    <div class="scard" style="border-left-color:var(--yellow)"><div class="sc-top"><span class="sc-nm">網通 ODM / 閘道器</span><span class="sc-tag by">連接升級財</span></div><div class="sc-codes"><b>啟碁 6285</b> · <b>智易 3596</b> · <b>中磊 5388</b> · <b>明泰 3380</b> · <b>正文 4906</b></div><div class="sc-desc">家用 CPE、mesh Wi-Fi 7、閘道器——偏連接升級、非 AI 運算財</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">電源 / 樓宇 / 平台</span></div><div class="sc-codes"><b>台達電 2308</b> · <b>研華 2395</b></div><div class="sc-desc">智慧樓宇/能源管理、邊緣 IoT 平台與閘道</div></div>
+  </div>
   <div class="callout co-blue"><span class="ct">🇯🇵 / 全球龍頭與分辨重點</span>智慧家庭品牌生態由 <b>Amazon(Alexa)、Google(Nest)、Apple(Home)、Samsung(SmartThings)</b> 主導，日本主要強在<b>零組件</b>層（Sony 感測、Murata RF/MLCC、Nidec 馬達）。投資上請分辨：<b>晶睿 3454、瑞昱 2379</b> 屬「裝置端 edge AI 運算財」，網通 ODM（6285/3596/5388）屬「Wi-Fi 7 連接升級財」，催化劑不同。</div>
   <div class="disc">資料來源：IDC（邊緣運算支出、推論在地化）、Gartner、Mordor / Grand View / MarketsandMarkets、TrendForce（CPU:GPU 再平衡）、Intel、NVIDIA、Hailo、Advantech/研華、Digitimes、各公司公開資料。市場規模因定義不同差 2–3 倍，引用務必標註口徑；「邊緣推論佔比」皆為預測，IDC 2030 約 50% 為最乾淨者；個股僅供研究，非投資建議。</div>
 </section>
@@ -646,26 +655,20 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 
   <h3>5X.1 穿戴：智慧手錶 / TWS / 智慧戒指</h3>
   <p>耳機端 AI（即時翻譯、AI 降噪、OTC 助聽）是飽和市場的再加速器。<b>Qualcomm S5 Gen 3</b> 音訊平台內建 NPU、宣稱 on-device AI 提升約 <b>50 倍</b>；Apple AirPods「即時翻譯」、智慧戒指 2025 出貨 +49%（基期小但最快）。</p>
-  <div class="scroll"><table>
-    <thead><tr><th>環節</th><th>代表台廠</th><th>角色</th><th class="c">關鍵晶片 / 全球龍頭</th></tr></thead>
-    <tbody>
-      <tr><td>聲學 / TWS</td><td>美律 2439</td><td>TWS、喇叭、OTC 助聽器、電池/充電盒</td><td class="c">Qualcomm S5 Gen3；Apple/三星</td></tr>
-      <tr><td>MEMS 麥克風</td><td>鈺太 6679</td><td>台系主力數位麥克風（語音為 edge AI 入口）</td><td class="c">🇯🇵 Murata MEMS</td></tr>
-      <tr><td>手錶 SoC</td><td>—（晶圓回台積電）</td><td>—</td><td class="c">Apple S 系列、Qualcomm W5+ Gen1、Ambiq</td></tr>
-    </tbody>
-  </table></div>
+  <div class="scards">
+    <div class="scard"><div class="sc-top"><span class="sc-nm">聲學 / TWS</span></div><div class="sc-codes"><b>美律 2439</b></div><div class="sc-desc">TWS、喇叭、OTC 助聽器、電池/充電盒</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">MEMS 麥克風</span></div><div class="sc-codes"><b>鈺太 6679</b></div><div class="sc-desc">台系主力數位麥克風（語音＝edge AI 入口）｜🇯🇵 Murata</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">手錶 SoC（晶圓回台積電）</span></div><div class="sc-codes">Apple S 系列 · Qualcomm W5+ · Ambiq</div><div class="sc-desc">always-on 低功耗協處理器，on-device 健康/語音 ML</div></div>
+  </div>
 
   <h3>5X.2 車用：輪子上的 AI 終端</h3>
   <p>單車半導體含量隨 ADAS（L2→L4）與座艙 AI 跳升：自駕半導體 2024 約 $680 億 → 2030 約 <b>$1,320 億</b>（Yole），ADAS 為成長最快段（CAGR ~15.6%）。運算核心是 <b>NVIDIA DRIVE Thor（約 2,000 TOPS）</b>、Qualcomm Snapdragon Ride、Mobileye。</p>
-  <div class="scroll"><table>
-    <thead><tr><th>代號</th><th>個股</th><th>角色</th></tr></thead>
-    <tbody>
-      <tr><td>3552</td><td><b>同致</b></td><td>倒車/超音波雷達、ADAS 模組（2025 營收年增逾 6 成）</td></tr>
-      <tr><td>2497</td><td><b>怡利電</b></td><td>抬頭顯示器(HUD ~40%)＋ADAS/車機</td></tr>
-      <tr><td>8255</td><td><b>朋程</b></td><td>車用功率半導體（整流二極體、48V、xEV IGBT/SiC）</td></tr>
-      <tr><td>2231</td><td><b>為升</b></td><td>胎壓偵測 TPMS＋雷達感測（單車標配含量上升）</td></tr>
-    </tbody>
-  </table></div>
+  <div class="scards">
+    <div class="scard"><div class="sc-top"><span class="sc-nm">同致</span><span class="cd-badge">3552</span></div><div class="sc-desc">倒車/超音波雷達、ADAS 模組（2025 營收年增逾 6 成）</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">怡利電</span><span class="cd-badge">2497</span></div><div class="sc-desc">抬頭顯示器 HUD（約 40%）＋ADAS/車機</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">朋程</span><span class="cd-badge">8255</span></div><div class="sc-desc">車用功率半導體（整流二極體、48V、xEV IGBT/SiC）</div></div>
+    <div class="scard"><div class="sc-top"><span class="sc-nm">為升</span><span class="cd-badge">2231</span></div><div class="sc-desc">胎壓偵測 TPMS＋雷達感測（單車標配含量上升）</div></div>
+  </div>
   <div class="src" style="display:block">🇯🇵/全球龍頭：車用晶片 Infineon、ST、NXP、Renesas、TI；車用 CIS 影像感測 Sony。台積電以 InFO/CoWoS 供車用 AI 運算。</div>
 
   <h3>5X.3 AR/VR 頭盔：2025 觸底、2026 反彈</h3>
@@ -876,17 +879,14 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <div class="callout co-green"><span class="ct">🇯🇵 此鏈的日本世界龍頭</span><b>Murata 村田 6981</b>（MLCC 全球第一，約 30–35%）、<b>Sony 6758</b>（CMOS 影像感測 CIS 全球第一，&gt;40%）、<b>TDK 6762</b>（小型/SMD 鋰電池技術龍頭）、<b>Hirose 廣瀨 6806</b>（高精密板對板/細間距連接器領導者）、<b>Alps Alpine 6770</b>（高階手機零件）。MS 對 TDK/Murata/Alps/Niterra/Hirose 給 Overweight——「高附加價值＋供應 Apple 高階機」者最穩。</div>
 
   <h3>10.4 AI 眼鏡專屬鏈 <span class="src" style="display:inline">宏遠投顧 2026/01/26</span></h3>
-  <div class="scroll"><table>
-    <thead><tr><th>代號</th><th>個股</th><th>受惠角度</th></tr></thead>
-    <tbody>
-      <tr><td>6854</td><td><b>錼創科技-KY</b></td><td>Micro-LED COC 全球市佔高</td></tr>
-      <tr><td>3019</td><td><b>亞光</b></td><td>具幾何光波導量產能力，相較德日廠有成本優勢</td></tr>
-      <tr><td>3504</td><td><b>揚明光</b></td><td>光波導廠 DigiLens 核心製造夥伴（衍射光波導）</td></tr>
-      <tr><td>3645</td><td><b>達邁</b></td><td>PI 薄膜用於 AI 眼鏡軟板基材，需求爆發</td></tr>
-      <tr><td>6789</td><td><b>采鈺</b></td><td>SWIR 感測與 Metalens 製程，感測器體積縮小 50%</td></tr>
-      <tr><td>6558</td><td><b>興能高</b></td><td>鏡腳微型堆疊電池，解決電池膨脹問題</td></tr>
-    </tbody>
-  </table></div>
+  <div class="scards">
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">錼創科技-KY</span><span class="cd-badge">6854</span></div><div class="sc-desc">Micro-LED COC 全球市佔高</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">亞光</span><span class="cd-badge">3019</span></div><div class="sc-desc">幾何光波導量產能力，較德日廠有成本優勢</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">揚明光</span><span class="cd-badge">3504</span></div><div class="sc-desc">DigiLens 核心製造夥伴（衍射光波導）</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">達邁</span><span class="cd-badge">3645</span></div><div class="sc-desc">PI 薄膜用於 AI 眼鏡軟板基材，需求爆發</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">采鈺</span><span class="cd-badge">6789</span></div><div class="sc-desc">SWIR 感測與 Metalens，感測器體積縮小 50%</div></div>
+    <div class="scard" style="border-left-color:var(--purple)"><div class="sc-top"><span class="sc-nm">興能高</span><span class="cd-badge">6558</span></div><div class="sc-desc">鏡腳微型堆疊電池，解決電池膨脹</div></div>
+  </div>
   <h4>Apple AI 眼鏡與更廣供應鏈 <span class="src" style="display:inline">群益 2026/01/02、國票 2026/04/16、TrendForce</span></h4>
   <div class="scroll"><table>
     <thead><tr><th>代號</th><th>個股</th><th>角色 / 受惠</th><th class="c">群益評等·目標價</th></tr></thead>
