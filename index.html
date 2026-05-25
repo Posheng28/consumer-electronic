@@ -202,6 +202,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <a href="#s9">9 · 供應鏈地圖</a>
   <a href="#s10">10 · 個股觀察清單</a>
   <a href="#shistcycle">★ 歷史循環＋關鍵節點</a>
+  <a href="#sbottom">★ 底部消費復甦選擇權</a>
   <a href="#s11">11 · 風險與監測</a>
   <a href="#s12">12 · 結論</a>
 </nav>
@@ -1044,6 +1045,54 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <div class="disc">資料來源：台灣證券交易所 TWSE 官方 API（每日收盤價）。關鍵節點月份為依公開歷史事件與股價走勢之事後標註，僅供研究對照；股價受大盤與多重因素影響，歷史循環不代表未來，<b>不構成投資建議</b>。</div>
 </section>
 
+<!-- ===== S10X 底部消費復甦選擇權 ===== -->
+<section id="sbottom">
+  <span class="sec-num">★ 延伸分析 · 真實股價 × 驅動拆解</span>
+  <h2 class="sh">底部消費復甦選擇權：誰還趴著、要等什麼信號</h2>
+  <p>AI 伺服器/HBM 鏈早就漲過了。真正「<strong>還在底部、且本質是消費需求槓桿</strong>」的,是那些被弱消費＋記憶體成本夾殺、股價沒被 AI 行情拉起來的落後股。但<em>股價在漲不等於消費復甦</em>——很多其實是被別的題材重估(如群創＝玻璃基板/FOPLP 封裝)。所以這裡用「<b>股價區間位置(查 TWSE)</b> × <b>現在到底什麼在驅動(查法說/新聞)</b>」兩條件交叉篩。</p>
+
+  <div class="chart-wrap">
+    <div class="ctit">消費電子個股區間位置（2024–2026，0%＝在區間低點、100%＝在區間高點）</div>
+    <div class="csub">越靠左＝越趴在底部。右側貼著 100% 的多半已被「非消費題材」重估,不是消費復甦落後股</div>
+    <div id="chart-bottom"></div>
+  </div>
+
+  <h3>✅ 真‧底部 + 消費槓桿（最像「消費復甦選擇權」）</h3>
+  <div class="scards">
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">敦泰</span><span class="cd-badge">3545</span><span class="sc-tag bg">區間 29%</span></div><div class="sc-desc"><b>為何算乾淨</b>：手機 TDDI 占 &gt;50%,典型去庫存/跌價週期股,車用/AMOLED 只配菜。<br><b>等信號</b>：手機 TDDI 量價齊揚、旺季拉貨、漲價落地</div></div>
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">群光</span><span class="cd-badge">2385</span><span class="sc-tag bg">區間 12%·最深</span></div><div class="sc-desc"><b>為何算乾淨</b>：核心仍是鍵盤/webcam,Q1 被記憶體缺貨壓、2025 營收年減。<br><b>等信號</b>：Win11/AI PC 換機放量、PC 周邊拉貨、記憶體成本鬆動</div></div>
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">美律</span><span class="cd-badge">2439</span><span class="sc-tag bg">區間 13%</span></div><div class="sc-desc"><b>為何算乾淨</b>：耳機(消費)占 65%,但 TWS 衰退 −16% 拖累。<br><b>等信號</b>：TWS 回升、耳機新客/醫療/AI 眼鏡聲學放量</div></div>
+    <div class="scard" style="border-left-color:var(--yellow)"><div class="sc-top"><span class="sc-nm">天鈺</span><span class="cd-badge">4961</span><span class="sc-tag by">區間 27%</span></div><div class="sc-desc"><b>雙面性</b>：消費 DDI/TDDI 受惠回溫,但又是記憶體擠壓 8 吋產能的<b>受害方</b>。<br><b>等信號</b>：消費 DDI 拉貨＋產能/記憶體緩解（ESL 為非消費 bonus）</div></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="callout co-yellow" style="margin-top:0"><span class="ct">⚠ 有消費槓桿、但「便宜的部分已走掉」</span>
+      <ul class="clist">
+        <li><b>盛群 6202(85%)・松翰 5471(86%)</b>：最純消費 MCU,但去庫存＋漲價的反彈已先發動、離低點 +80%</li>
+        <li><b>瑞昱 2379(87%)</b>：PC/NB/audio 基本盤大、確實槓桿消費＋記憶體鬆動,但 AI 乙太網/車用題材已拉高本益比</li>
+        <li class="arr"><b>致伸 4915(22%)</b>：股價在底,但成長動能已轉 AIoT/車用,消費周邊是拖累項——底部≠純消費故事</li>
+      </ul>
+    </div>
+    <div class="callout co-red" style="margin-top:0"><span class="ct">❌ 已被別的題材重估,別當消費復甦股</span>
+      <ul class="clist">
+        <li>區間皆 99–100% 高點:<b>群創 3481</b>（FOPLP/玻璃基板封裝）、<b>友達 2409</b>（矽光子/CPO）</li>
+        <li><b>今國光 6209</b>（紅外線/AR 光波導/LiDAR,20 年新高）、<b>瑞軒 2489</b>（電競/視會 mix）</li>
+        <li class="arr"><b>偉詮電 2436・茂達 6138</b>（AI server 散熱/電源）——漲的原因與消費復甦無關</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout co-green"><span class="ct">🔑 消費復甦的「總開關信號」（按重要度）</span>
+    <ul class="clist">
+      <li><b>① 記憶體合約價見頂/回落</b>（報告估 2026 Q3–Q4）→ 成本壓力解除、消費 IC 與品牌毛利回升（敦泰、天鈺、致新、瑞昱的最關鍵信號）</li>
+      <li><b>② IDC/Counterpoint 手機/PC 出貨預估「由下修轉上修」</b> → 需求面確認（目前仍在下修）</li>
+      <li><b>③ 通路庫存回補 + 驅動 IC/MCU 漲價站穩</b></li>
+      <li class="arr"><b>④ 下半年旺季拉貨驗證</b></li>
+    </ul>
+  </div>
+  <div class="disc">方法：股價區間位置＝TWSE 真實收盤、2024–2026 區間（資料截至 2026/05）；各檔驅動＝2025–2026 法說/新聞彙整；信號為依本報告框架之推論。股價位置為當下快照、會變動，個股僅供研究，<b>不構成投資建議</b>。</div>
+</section>
+
 <!-- ===== S11 風險 ===== -->
 <section id="s11">
   <span class="sec-num">第 11 章</span>
@@ -1376,6 +1425,12 @@ function buildCharts(){
     labels:['2013','2014','2016','2018','2024','2026E'],
     series:[{name:'全球智慧手機出貨（億支）',color:C.orange,data:[10.1,12.8,14.7,14.0,12.2,11.0]}],
     unit:'億',h:280
+  });
+  // consumer-stock range position (0%=at low, 100%=at high)
+  barChart('chart-bottom',{
+    labels:['群光\n2385','美律\n2439','致伸\n4915','天鈺\n4961','敦泰\n3545','聯詠\n3034','致新\n8081','矽創\n8016','盛群\n6202','松翰\n5471','瑞昱\n2379','今國光\n6209','友達\n2409','群創\n3481'],
+    series:[{name:'2024–2026 區間位置 (%)',color:C.blue,data:[12,13,22,27,29,46,77,83,85,86,87,99,100,100]}],
+    unit:'%',w:940,h:320
   });
   buildRoadmap();
   buildHistModule();
