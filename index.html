@@ -338,8 +338,8 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <h3>5.1 AI PC：滲透率加速，但總量未必同步爆發</h3>
   <div class="grid g2">
     <div class="chart-wrap">
-      <div class="ctit">AI PC 滲透率（多機構口徑）</div>
-      <div class="csub">2026 突破 50%、2027 逼近 80%、2028 幾乎全面 AI PC 化</div>
+      <div class="ctit">AI PC 滲透率趨勢</div>
+      <div class="csub">2026 突破 50%、2027 逼近 80%、2028 幾乎全面 AI PC 化（綜合多家預估）</div>
       <div id="chart-aipc"></div>
     </div>
     <div>
@@ -1224,10 +1224,7 @@ function buildCharts(){
   lineChart('chart-aipc',{
     labels:['2023','2024','2025','2026','2027','2028'],
     series:[
-      {name:'DIGITIMES',color:C.blue,data:[11.4,22.3,38.8,54.0,null,null]},
-      {name:'國泰投顧',color:C.green,data:[null,18,40,58,79,null]},
-      {name:'Counterpoint',color:C.yellow,data:[null,null,39,59,null,null]},
-      {name:'IDC(福邦)',color:C.purple,data:[18.2,null,null,null,null,98.1]},
+      {name:'AI PC 滲透率',color:C.blue,data:[15,20,39,57,79,98]},
     ],unit:'%',h:300,yMin:0
   });
   // phone: dual concept — show shipment index & ASP & value via grouped (normalized note in tooltip)
