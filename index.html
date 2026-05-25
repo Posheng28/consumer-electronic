@@ -1307,9 +1307,9 @@ function buildCharts(){
   });
   // phone: dual concept — show shipment index & ASP & value via grouped (normalized note in tooltip)
   barChart('chart-phone',{
-    labels:['出貨量 YoY','ASP YoY','市場總值'],
+    labels:['出貨量 YoY','ASP YoY'],
     series:[
-      {name:'2026 變化 (%)',color:C.blue,data:[-12.9,14,null]},
+      {name:'2026 變化 (%)',color:C.blue,data:[-12.9,14]},
     ],unit:'%',h:240
   });
   document.getElementById('chart-phone').insertAdjacentHTML('beforeend',
