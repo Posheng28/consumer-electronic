@@ -1147,7 +1147,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       <tr><td>聯詠 3034</td><td class="c">~14x</td><td class="c">10–25x</td><td class="c">~4.5x</td><td class="c">3–6x</td><td class="c"><span class="badge bg">合理偏便宜</span></td></tr>
       <tr><td>敦泰 3545</td><td class="c">噪音†</td><td class="c">—</td><td class="c">~1.3x</td><td class="c">1–4x</td><td class="c"><span class="badge bg">便宜·PB 近低</span></td></tr>
       <tr><td>瑞昱 2379</td><td class="c">~15.7x</td><td class="c">12–30x</td><td class="c">~6.5x</td><td class="c">3–7x</td><td class="c"><span class="badge by">PE 中性·PB 偏高</span></td></tr>
-      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">失真†</td><td class="c">—</td><td class="c">~0.53x / ~0.8x</td><td class="c">0.4–1.0x / 0.4–1.2x</td><td class="c"><span class="badge bg">PB&lt;1·惟已被封裝題材帶動</span></td></tr>
+      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">失真†</td><td class="c">—</td><td class="c">~1.73x / ~0.8x</td><td class="c">0.4–1.8x / 0.4–1.2x</td><td class="c"><span class="badge by">群創偏貴(PB 突破淨值、FOPLP 重估)·友達 PB&lt;1</span></td></tr>
       <tr><td>記憶體模組</td><td>威剛 3260 / 群聯 8299</td><td class="c">~8.7x / ~43x(fwd 低)</td><td class="c">5–20x / 8–45x</td><td class="c">~3.0x / 偏高</td><td class="c">1–3x / 1.5–5x</td><td class="c"><span class="badge by">循環高峰·低PE高PB</span></td></tr>
       <tr><td>AI 眼鏡/光學</td><td>錼創-KY 6854</td><td class="c">失真†</td><td class="c">—</td><td class="c">~5.4x</td><td class="c">上市短</td><td class="c"><span class="badge bgray">以 PB 為準</span></td></tr>
     </tbody>
@@ -1156,13 +1156,13 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
     <div class="callout co-red" style="margin-top:0"><span class="ct">📈 估值已在歷史高檔（溢價已反映）</span>
       <ul class="clist">
         <li><b>信驊 5274</b>（PE ~90x、PB ~47x）、<b>奇鋐 3017</b>（PB ~10x 歷史極端）最伸展</li>
-        <li><b>創意 3443</b>（~80x）、<b>國巨 2327</b>（PE/PB 雙近高）、<b>世芯 3661</b>（高檔）</li>
-        <li class="arr">這些「漲很多」是 AI/散熱/被動溢價,不是消費復甦——追高風險報酬比已差</li>
+        <li><b>創意 3443</b>（~80x）、<b>國巨 2327</b>（PE/PB 雙近高）、<b>世芯 3661</b>（高檔）、<b>群創 3481</b>（PB ~1.73 突破淨值、FOPLP 重估）</li>
+        <li class="arr">這些「漲很多」是 AI/散熱/被動/封裝溢價,不是消費復甦——追高風險報酬比已差</li>
       </ul>
     </div>
     <div class="callout co-green" style="margin-top:0"><span class="ct">📉 估值近歷史低檔（消費/面板/PC 價值）</span>
       <ul class="clist">
-        <li>面板 <b>群創(PB 0.53x)·友達(PB 0.8x)</b> 跌破淨值;消費 IC <b>致新·聯詠·敦泰(PB 近低)</b></li>
+        <li>面板 <b>友達(PB ~0.8x)</b> 仍跌破淨值（群創已重估至 PB ~1.7、見上方偏貴側）;消費 IC <b>致新·聯詠·敦泰(PB 近低)</b></li>
         <li>PC 價值 <b>華碩(~10–12x)·樺漢(~11x)</b>、<b>大立光 PB 近低</b></li>
         <li class="arr">與「底部選擇權」結論呼應:便宜 + 消費槓桿 = 等記憶體見頂的選擇權</li>
       </ul>
@@ -1540,9 +1540,9 @@ function buildCharts(){
   });
   valBars('chart-val',{items:[
     {label:'大立光\n3008',pos:4},{label:'樺漢\n6414',pos:8},{label:'致新\n8081',pos:9},{label:'敦泰\n3545',pos:10},
-    {label:'群創\n3481',pos:22},{label:'華新科\n2492',pos:26},{label:'研華\n2395',pos:44},{label:'友達\n2409',pos:50},
-    {label:'華碩\n2357',pos:50},{label:'聯詠\n3034',pos:50},{label:'世芯\n3661',pos:58},{label:'技嘉\n2376',pos:68},
-    {label:'鴻海\n2317',pos:75},{label:'瑞昱\n2379',pos:88},{label:'奇鋐\n3017',pos:89},{label:'信驊\n5274',pos:91},
+    {label:'華新科\n2492',pos:26},{label:'研華\n2395',pos:44},{label:'友達\n2409',pos:50},{label:'華碩\n2357',pos:50},
+    {label:'聯詠\n3034',pos:50},{label:'世芯\n3661',pos:58},{label:'技嘉\n2376',pos:68},{label:'鴻海\n2317',pos:75},
+    {label:'瑞昱\n2379',pos:88},{label:'奇鋐\n3017',pos:89},{label:'群創\n3481',pos:90},{label:'信驊\n5274',pos:91},
     {label:'國巨\n2327',pos:92},{label:'威剛\n3260',pos:100}
   ]});
   buildRoadmap();
