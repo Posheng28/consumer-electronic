@@ -1122,54 +1122,53 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <!-- ===== S10V 估值對照 ===== -->
 <section id="sval">
   <span class="sec-num">★ 延伸分析 · 估值對照</span>
-  <h2 class="sh">估值對照：各族群本益比／淨值比 現況 vs 歷史區間</h2>
-  <p>把各族群代表股的<strong>現在估值</strong>放回它<em>自己的歷史區間</em>看,就能分辨「漲多了是貴、還是只是回到常態」。一個清楚的對照:<b>AI/散熱/被動</b>多在歷史高檔(溢價已反映),<b>消費 IC/面板/PC 價值股</b>多趴在歷史低檔——和前面「底部選擇權」的結論互相呼應。</p>
+  <h2 class="sh">估值對照：官方本益比／淨值比現況（資料日 2026/05/25）</h2>
+  <p>下表所有 <b>本益比(P/E)、股價淨值比(P/B)</b> 皆<strong>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API</strong>（每日更新），非人工估算。明顯對照：<b>AI/ASIC、散熱、被動元件</b>估值高（信驊 PB 112、奇鋐 22、國巨 8.5）；<b>消費 IC/PC/面板價值股</b>估值低（友達 1.2、敦泰 1.5、群創 1.7、華碩 1.8）。<span class="hl">估值會每日變動，請以即時為準；可重跑 verify_stocks.py 更新。</span></p>
   <div class="chart-wrap">
-    <div class="ctit">各股 P/B 在自身歷史區間的位階（約估，2020–2026）</div>
-    <div class="csub">越低＝相對自己歷史越便宜。便宜端＝消費/PC/面板價值股；偏貴端＝AI/散熱/被動溢價股（虧損/轉型股以 P/B 判讀）</div>
+    <div class="ctit">各股官方股價淨值比 P/B（2026/05/25，TWSE/TPEx）</div>
+    <div class="csub">官方現值，非歷史位階估算。註：P/B 因產業而異、跨業不可直接比較；高 P/B 多為 AI/高成長股（信驊 112 已破表、未入圖）</div>
     <div id="chart-val"></div>
   </div>
   <div class="scroll"><table>
-    <thead><tr><th>群組</th><th>代表股</th><th class="c">現 P/E</th><th class="c">歷史 P/E 區間*</th><th class="c">現 P/B</th><th class="c">歷史 P/B 區間*</th><th class="c">相對自身歷史</th></tr></thead>
+    <thead><tr><th>群組</th><th>代表股</th><th class="c">現 P/E</th><th class="c">現 P/B</th><th>相對評價（研判）</th></tr></thead>
     <tbody>
-      <tr><td rowspan="3">AI / ASIC IC</td><td>信驊 5274</td><td class="c">~90x</td><td class="c">30–90x</td><td class="c">~47x</td><td class="c">15–50x</td><td class="c"><span class="badge br">偏貴·極端</span></td></tr>
-      <tr><td>創意 3443</td><td class="c">~80x</td><td class="c">30–90x</td><td class="c">高</td><td class="c">高</td><td class="c"><span class="badge br">偏貴</span></td></tr>
-      <tr><td>世芯-KY 3661</td><td class="c">~42x</td><td class="c">20–60x</td><td class="c">~6.5x</td><td class="c">3–9x</td><td class="c"><span class="badge by">合理偏高</span></td></tr>
-      <tr><td>散熱</td><td>奇鋐 3017</td><td class="c">~31x</td><td class="c">10–37x</td><td class="c">~10x</td><td class="c">2–11x</td><td class="c"><span class="badge br">偏貴·PB 極高</span></td></tr>
-      <tr><td rowspan="2">被動元件</td><td>國巨 2327</td><td class="c">~30x</td><td class="c">10–30x</td><td class="c">~3.8x</td><td class="c">1.5–4x</td><td class="c"><span class="badge br">偏貴</span></td></tr>
-      <tr><td>華新科 2492</td><td class="c">~24–31x</td><td class="c">10–31x</td><td class="c">~2.0x</td><td class="c">1.3–4x</td><td class="c"><span class="badge by">合理偏貴</span></td></tr>
-      <tr><td rowspan="2">iPhone 鏈</td><td>鴻海 2317</td><td class="c">~17.7x</td><td class="c">9–18x</td><td class="c">~1.6x</td><td class="c">1.0–1.8x</td><td class="c"><span class="badge by">合理偏高</span></td></tr>
-      <tr><td>大立光 3008</td><td class="c">~17.6x</td><td class="c">12–30x</td><td class="c">~1.6x</td><td class="c">1.5–4x</td><td class="c"><span class="badge bg">便宜·PB 近低</span></td></tr>
-      <tr><td rowspan="2">AI PC / 板卡</td><td>華碩 2357</td><td class="c">~10–12x</td><td class="c">8–18x</td><td class="c">~1.7x</td><td class="c">1.2–2.2x</td><td class="c"><span class="badge bg">便宜</span></td></tr>
-      <tr><td>技嘉 2376</td><td class="c">~15.5x</td><td class="c">10–26x</td><td class="c">~3.2x</td><td class="c">1.5–4x</td><td class="c"><span class="badge bb">合理</span></td></tr>
-      <tr><td>IPC</td><td>研華 2395 / 樺漢 6414</td><td class="c">~27x / ~11x</td><td class="c">20–40x / 10–25x</td><td class="c">~6.2x / ~1.7x</td><td class="c">4–9x / 1.5–4x</td><td class="c"><span class="badge bg">樺漢便宜·研華合理</span></td></tr>
-      <tr><td rowspan="4">消費 IC（底部）</td><td>致新 8081</td><td class="c">~12.6x</td><td class="c">10–25x</td><td class="c">~2.8x</td><td class="c">2.5–6x</td><td class="c"><span class="badge bg">便宜</span></td></tr>
-      <tr><td>聯詠 3034</td><td class="c">~14x</td><td class="c">10–25x</td><td class="c">~4.5x</td><td class="c">3–6x</td><td class="c"><span class="badge bg">合理偏便宜</span></td></tr>
-      <tr><td>敦泰 3545</td><td class="c">噪音†</td><td class="c">—</td><td class="c">~1.3x</td><td class="c">1–4x</td><td class="c"><span class="badge bg">便宜·PB 近低</span></td></tr>
-      <tr><td>瑞昱 2379</td><td class="c">~15.7x</td><td class="c">12–30x</td><td class="c">~6.5x</td><td class="c">3–7x</td><td class="c"><span class="badge by">PE 中性·PB 偏高</span></td></tr>
-      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">失真†</td><td class="c">—</td><td class="c">~1.73x / ~0.8x</td><td class="c">0.4–1.8x / 0.4–1.2x</td><td class="c"><span class="badge by">群創偏貴(PB 突破淨值、FOPLP 重估)·友達 PB&lt;1</span></td></tr>
-      <tr><td>記憶體模組</td><td>威剛 3260 / 群聯 8299</td><td class="c">~8.7x / ~43x(fwd 低)</td><td class="c">5–20x / 8–45x</td><td class="c">~3.0x / 偏高</td><td class="c">1–3x / 1.5–5x</td><td class="c"><span class="badge by">循環高峰·低PE高PB</span></td></tr>
-      <tr><td>AI 眼鏡/光學</td><td>錼創-KY 6854</td><td class="c">失真†</td><td class="c">—</td><td class="c">~5.4x</td><td class="c">上市短</td><td class="c"><span class="badge bgray">以 PB 為準</span></td></tr>
+      <tr><td rowspan="3">AI / ASIC IC</td><td>信驊 5274</td><td class="c">150.4</td><td class="c">112.4</td><td><span class="badge br">估值極端高</span>（BMC 龍頭、稀缺性溢價）</td></tr>
+      <tr><td>創意 3443</td><td class="c">159.8</td><td class="c">48.8</td><td><span class="badge br">偏貴</span></td></tr>
+      <tr><td>世芯-KY 3661</td><td class="c">71.8</td><td class="c">9.3</td><td><span class="badge by">高（AI 確定性最高）</span></td></tr>
+      <tr><td>散熱</td><td>奇鋐 3017</td><td class="c">42.3</td><td class="c">22.4</td><td><span class="badge br">PB 歷史極端高</span></td></tr>
+      <tr><td rowspan="2">被動元件</td><td>國巨 2327</td><td class="c">54.4</td><td class="c">8.5</td><td><span class="badge br">PE/PB 雙高</span></td></tr>
+      <tr><td>華新科 2492</td><td class="c">61.6</td><td class="c">2.9</td><td><span class="badge by">PE 高、PB 中</span></td></tr>
+      <tr><td rowspan="2">iPhone 鏈</td><td>鴻海 2317</td><td class="c">18.5</td><td class="c">2.1</td><td><span class="badge bb">相對合理</span>（AI 伺服器重估）</td></tr>
+      <tr><td>大立光 3008</td><td class="c">24.0</td><td class="c">2.7</td><td><span class="badge bb">相對合理</span></td></tr>
+      <tr><td rowspan="2">AI PC / 板卡</td><td>華碩 2357</td><td class="c">12.7</td><td class="c">1.8</td><td><span class="badge bg">相對低</span></td></tr>
+      <tr><td>技嘉 2376</td><td class="c">15.7</td><td class="c">3.5</td><td><span class="badge bb">合理</span></td></tr>
+      <tr><td rowspan="2">IPC</td><td>研華 2395</td><td class="c">38.7</td><td class="c">8.7</td><td><span class="badge by">高估值</span></td></tr>
+      <tr><td>樺漢 6414</td><td class="c">16.9</td><td class="c">2.0</td><td><span class="badge bg">相對低</span></td></tr>
+      <tr><td rowspan="4">消費 IC</td><td>致新 8081</td><td class="c">16.4</td><td class="c">3.4</td><td><span class="badge bb">合理</span></td></tr>
+      <tr><td>聯詠 3034</td><td class="c">20.0</td><td class="c">4.1</td><td><span class="badge bb">合理</span></td></tr>
+      <tr><td>敦泰 3545</td><td class="c">—（虧損）</td><td class="c">1.5</td><td><span class="badge bg">PB 相對低</span></td></tr>
+      <tr><td>瑞昱 2379</td><td class="c">21.0</td><td class="c">6.7</td><td><span class="badge by">PB 偏高</span></td></tr>
+      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">446 / 76</td><td class="c">1.73 / 1.23</td><td><span class="badge by">PB 已突破淨值（FOPLP / CPO 重估，已非跌破淨值的便宜股）</span></td></tr>
+      <tr><td>記憶體模組</td><td>威剛 3260 / 群聯 8299</td><td class="c">8.1 / 23.7</td><td class="c">4.7 / 7.4</td><td><span class="badge by">低 PE 是循環高峰獲利、搭配高 PB（價值陷阱注意）</span></td></tr>
+      <tr><td>AI 眼鏡/光學</td><td>錼創-KY 6854</td><td class="c">—（虧損）</td><td class="c">5.6</td><td><span class="badge bgray">以 PB 為準（早期、上市短）</span></td></tr>
     </tbody>
   </table></div>
   <div class="grid g2">
-    <div class="callout co-red" style="margin-top:0"><span class="ct">📈 估值已在歷史高檔（溢價已反映）</span>
+    <div class="callout co-red" style="margin-top:0"><span class="ct">📈 官方 P/B 偏高（溢價已反映）</span>
       <ul class="clist">
-        <li><b>信驊 5274</b>（PE ~90x、PB ~47x）、<b>奇鋐 3017</b>（PB ~10x 歷史極端）最伸展</li>
-        <li><b>創意 3443</b>（~80x）、<b>國巨 2327</b>（PE/PB 雙近高）、<b>世芯 3661</b>（高檔）、<b>群創 3481</b>（PB ~1.73 突破淨值、FOPLP 重估）</li>
-        <li class="arr">這些「漲很多」是 AI/散熱/被動/封裝溢價,不是消費復甦——追高風險報酬比已差</li>
+        <li><b>信驊 5274</b>（PB 112）、<b>奇鋐 3017</b>（PB 22）最伸展；<b>世芯 3661</b>（9.3）、<b>研華 2395</b>（8.7）、<b>國巨 2327</b>（8.5）、<b>群聯 8299</b>（7.4）、<b>瑞昱 2379</b>（6.7）次之</li>
+        <li class="arr">高 P/B 多反映 AI/散熱/被動/高速介面溢價——非消費復甦,追高風險報酬比已差</li>
       </ul>
     </div>
-    <div class="callout co-green" style="margin-top:0"><span class="ct">📉 估值近歷史低檔（消費/面板/PC 價值）</span>
+    <div class="callout co-green" style="margin-top:0"><span class="ct">📉 官方 P/B 偏低（消費/面板/PC）</span>
       <ul class="clist">
-        <li>面板 <b>友達(PB ~0.8x)</b> 仍跌破淨值（群創已重估至 PB ~1.7、見上方偏貴側）;消費 IC <b>致新·聯詠·敦泰(PB 近低)</b></li>
-        <li>PC 價值 <b>華碩(~10–12x)·樺漢(~11x)</b>、<b>大立光 PB 近低</b></li>
-        <li class="arr">與「底部選擇權」結論呼應:便宜 + 消費槓桿 = 等記憶體見頂的選擇權</li>
+        <li>面板 <b>友達 1.2</b>、<b>群創 1.7</b>（皆已突破/接近淨值，非昔日深跌破）;消費/PC <b>敦泰 1.5·華碩 1.8·樺漢 2.0·大立光 2.7</b></li>
+        <li class="arr">低 P/B 部分屬產業結構（面板/組裝本就低 PB），非全是「便宜」；與消費槓桿並看才有意義</li>
       </ul>
     </div>
   </div>
   <div class="callout co-yellow"><span class="ct">⚠ 估值陷阱提醒（循環股）</span><b>威剛 3260、群聯 8299</b> 的低 TTM 本益比是「<b>循環高峰獲利</b>」造成,搭配偏高的 P/B——是典型「低 PE × 高 PB」的末段循環特徵,低本益比≠便宜。被動(國巨/華新科)亦有此風險。判斷時須交叉看 P/B 與遠期 EPS。</div>
-  <div class="disc">*歷史區間為依 2020–2026 多年表現之<b>約估</b>(精確值請查財報狗/Goodinfo 河流圖),方向性參考。†虧損/轉型股(面板、錼創、敦泰)P/E 失真,以 <b>P/B</b> 為準。現值為 TTM、截至 2026/05 之近似,不同來源略有差異。資料來源:財報狗、Goodinfo、WantGoo、cnyes 等公開資料。個股僅供研究,<b>不構成投資建議</b>。</div>
+  <div class="disc">P/E、P/B <b>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API，資料日 2026/05/25</b>（每日更新；可重跑專案內 <code>verify_stocks.py</code> 抓最新官方值）。虧損股 P/E 為空（以「—（虧損）」標示）、以 P/B 判讀。估值每日變動，請以即時為準。個股僅供研究，<b>不構成投資建議</b>。</div>
 </section>
 
 <!-- ===== S11 風險 ===== -->
@@ -1416,27 +1415,28 @@ function rangeBar(id,{cats,w=560,h=300,unit='%'}){
 }
 
 /* ---- valuation position bars (coloured by cheap/expensive) ---- */
-function valBars(id,{items,w=940,h=300}){
+function valBars(id,{items,w=940,h=300,vmax=24,unit='x',t1=3,t2=8}){
   const host=document.getElementById(id);if(!host)return;
   const ml=40,mr=14,mt=18,mb=46,pw=w-ml-mr,ph=h-mt-mb;
-  const y=v=>mt+ph-(v/100)*ph;
+  const y=v=>mt+ph-(Math.min(v,vmax)/vmax)*ph;
   const svg=svgRoot(w,h);
-  for(let i=0;i<=4;i++){const gv=i*25,gy=y(gv);
+  for(let i=0;i<=4;i++){const gv=vmax*i/4,gy=y(gv);
     el('line',{x1:ml,y1:gy,x2:w-mr,y2:gy,stroke:C.grid,'stroke-width':1},svg);
-    el('text',{x:ml-6,y:gy+4,'text-anchor':'end','font-size':10,fill:C.tx2},svg).textContent=gv+'%';}
+    el('text',{x:ml-6,y:gy+4,'text-anchor':'end','font-size':10,fill:C.tx2},svg).textContent=Math.round(gv*10)/10;}
   const gw=pw/items.length, bw=Math.min(gw*0.58,40);
   items.forEach((it,i)=>{
     const gx=ml+gw*i+gw/2;
-    const col=it.pos<=33?C.green:it.pos<=66?C.yellow:C.red;
-    const by=y(it.pos), bh=(mt+ph)-by;
+    const v=it.pos;
+    const col=v<=t1?C.green:v<=t2?C.yellow:C.red;
+    const by=y(v), bh=(mt+ph)-by;
     const r=el('rect',{x:gx-bw/2,y:by,width:bw,height:Math.max(bh,1),rx:3,fill:col,opacity:.9},svg);
-    r.addEventListener('mousemove',e=>showTT(`<b>${it.label.replace('\n',' ')}</b><br>P/B 位階 <b style="color:${col}">${it.pos}%</b>`,e.clientX,e.clientY));
+    r.addEventListener('mousemove',e=>showTT(`<b>${it.label.replace('\n',' ')}</b><br>P/B <b style="color:${col}">${v}${unit}</b>`,e.clientX,e.clientY));
     r.addEventListener('mouseleave',hideTT);
-    el('text',{x:gx,y:by-4,'text-anchor':'middle','font-size':9.5,fill:col,'font-weight':700},svg).textContent=it.pos+'%';
+    el('text',{x:gx,y:by-4,'text-anchor':'middle','font-size':9.5,fill:col,'font-weight':700},svg).textContent=v;
     xLabel(svg,gx,h-mb+15,it.label,C.tx2,9.5);
   });
   host.appendChild(svg);
-  renderLegend(host,[{name:'≤33% 相對便宜',color:C.green},{name:'34–66% 中性',color:C.yellow},{name:'>66% 偏貴',color:C.red}]);
+  renderLegend(host,[{name:`P/B ≤${t1}`,color:C.green},{name:`${t1}–${t2}`,color:C.yellow},{name:`>${t2}`,color:C.red}]);
 }
 
 /* ============ build report charts ============ */
@@ -1538,12 +1538,12 @@ function buildCharts(){
     series:[{name:'2024–2026 區間位置 (%)',color:C.blue,data:[12,13,22,27,29,46,77,83,85,86,87,99,100,100]}],
     unit:'%',w:940,h:320
   });
-  valBars('chart-val',{items:[
-    {label:'大立光\n3008',pos:4},{label:'樺漢\n6414',pos:8},{label:'致新\n8081',pos:9},{label:'敦泰\n3545',pos:10},
-    {label:'華新科\n2492',pos:26},{label:'研華\n2395',pos:44},{label:'友達\n2409',pos:50},{label:'華碩\n2357',pos:50},
-    {label:'聯詠\n3034',pos:50},{label:'世芯\n3661',pos:58},{label:'技嘉\n2376',pos:68},{label:'鴻海\n2317',pos:75},
-    {label:'瑞昱\n2379',pos:88},{label:'奇鋐\n3017',pos:89},{label:'群創\n3481',pos:90},{label:'信驊\n5274',pos:91},
-    {label:'國巨\n2327',pos:92},{label:'威剛\n3260',pos:100}
+  valBars('chart-val',{vmax:24,unit:'x',t1:3,t2:8,items:[
+    {label:'友達\n2409',pos:1.2},{label:'敦泰\n3545',pos:1.5},{label:'群創\n3481',pos:1.7},{label:'華碩\n2357',pos:1.8},
+    {label:'樺漢\n6414',pos:2.0},{label:'鴻海\n2317',pos:2.1},{label:'大立光\n3008',pos:2.7},{label:'華新科\n2492',pos:2.9},
+    {label:'致新\n8081',pos:3.4},{label:'技嘉\n2376',pos:3.5},{label:'聯詠\n3034',pos:4.1},{label:'威剛\n3260',pos:4.7},
+    {label:'瑞昱\n2379',pos:6.7},{label:'群聯\n8299',pos:7.4},{label:'國巨\n2327',pos:8.5},{label:'研華\n2395',pos:8.7},
+    {label:'世芯\n3661',pos:9.3},{label:'奇鋐\n3017',pos:22.4}
   ]});
   buildRoadmap();
   buildHistModule();
