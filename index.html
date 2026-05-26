@@ -1123,7 +1123,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <section id="sval">
   <span class="sec-num">★ 延伸分析 · 估值對照</span>
   <h2 class="sh">估值對照：官方本益比／淨值比現況（資料日 2026/05/25）</h2>
-  <p>下表所有 <b>本益比(P/E)、股價淨值比(P/B)</b> 皆<strong>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API</strong>（每日更新），非人工估算。明顯對照：<b>AI/ASIC、散熱、被動元件</b>估值高（信驊 PB 112、奇鋐 22、國巨 8.5）；<b>消費 IC/PC/面板價值股</b>估值低（友達 1.2、敦泰 1.5、群創 1.7、華碩 1.8）。<span class="hl">估值會每日變動，請以即時為準；可重跑 verify_stocks.py 更新。</span></p>
+  <p>下表所有 <b>本益比(P/E)、股價淨值比(P/B)</b> 皆<strong>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API</strong>（每日更新），非人工估算。明顯對照：<b>AI/ASIC、被動元件</b>估值高（信驊 PB 112、世芯 9.3、國巨 8.5）；<b>消費 IC/PC/面板價值股</b>估值低（友達 1.2、敦泰 1.5、群創 1.7、華碩 1.8）。<span class="hl">估值會每日變動，請以即時為準；可重跑 verify_stocks.py 更新。</span></p>
   <div class="chart-wrap">
     <div class="ctit">各股官方股價淨值比 P/B（2026/05/25，TWSE/TPEx）</div>
     <div class="csub">官方現值，非歷史位階估算。註：P/B 因產業而異、跨業不可直接比較；高 P/B 多為 AI/高成長股（信驊 112 已破表、未入圖）</div>
@@ -1135,7 +1135,6 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       <tr><td rowspan="3">AI / ASIC IC</td><td>信驊 5274</td><td class="c">150.4</td><td class="c">112.4</td><td><span class="badge br">估值極端高</span>（BMC 龍頭、稀缺性溢價）</td></tr>
       <tr><td>創意 3443</td><td class="c">159.8</td><td class="c">48.8</td><td><span class="badge br">偏貴</span></td></tr>
       <tr><td>世芯-KY 3661</td><td class="c">71.8</td><td class="c">9.3</td><td><span class="badge by">高（AI 確定性最高）</span></td></tr>
-      <tr><td>散熱</td><td>奇鋐 3017</td><td class="c">42.3</td><td class="c">22.4</td><td><span class="badge br">PB 歷史極端高</span></td></tr>
       <tr><td rowspan="2">被動元件</td><td>國巨 2327</td><td class="c">54.4</td><td class="c">8.5</td><td><span class="badge br">PE/PB 雙高</span></td></tr>
       <tr><td>華新科 2492</td><td class="c">61.6</td><td class="c">2.9</td><td><span class="badge by">PE 高、PB 中</span></td></tr>
       <tr><td rowspan="2">iPhone 鏈</td><td>鴻海 2317</td><td class="c">18.5</td><td class="c">2.1</td><td><span class="badge bb">相對合理</span>（AI 伺服器重估）</td></tr>
@@ -1156,8 +1155,8 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <div class="grid g2">
     <div class="callout co-red" style="margin-top:0"><span class="ct">📈 官方 P/B 偏高（溢價已反映）</span>
       <ul class="clist">
-        <li><b>信驊 5274</b>（PB 112）、<b>奇鋐 3017</b>（PB 22）最伸展；<b>世芯 3661</b>（9.3）、<b>研華 2395</b>（8.7）、<b>國巨 2327</b>（8.5）、<b>群聯 8299</b>（7.4）、<b>瑞昱 2379</b>（6.7）次之</li>
-        <li class="arr">高 P/B 多反映 AI/散熱/被動/高速介面溢價——非消費復甦,追高風險報酬比已差</li>
+        <li><b>信驊 5274</b>（PB 112）最伸展；<b>世芯 3661</b>（9.3）、<b>研華 2395</b>（8.7）、<b>國巨 2327</b>（8.5）、<b>群聯 8299</b>（7.4）、<b>瑞昱 2379</b>（6.7）次之</li>
+        <li class="arr">高 P/B 多反映 AI/被動/高速介面溢價——非消費復甦,追高風險報酬比已差</li>
       </ul>
     </div>
     <div class="callout co-green" style="margin-top:0"><span class="ct">📉 官方 P/B 偏低（消費/面板/PC）</span>
@@ -1538,12 +1537,12 @@ function buildCharts(){
     series:[{name:'2024–2026 區間位置 (%)',color:C.blue,data:[12,13,22,27,29,46,77,83,85,86,87,99,100,100]}],
     unit:'%',w:940,h:320
   });
-  valBars('chart-val',{vmax:24,unit:'x',t1:3,t2:8,items:[
+  valBars('chart-val',{vmax:12,unit:'x',t1:3,t2:8,items:[
     {label:'友達\n2409',pos:1.2},{label:'敦泰\n3545',pos:1.5},{label:'群創\n3481',pos:1.7},{label:'華碩\n2357',pos:1.8},
     {label:'樺漢\n6414',pos:2.0},{label:'鴻海\n2317',pos:2.1},{label:'大立光\n3008',pos:2.7},{label:'華新科\n2492',pos:2.9},
     {label:'致新\n8081',pos:3.4},{label:'技嘉\n2376',pos:3.5},{label:'聯詠\n3034',pos:4.1},{label:'威剛\n3260',pos:4.7},
     {label:'瑞昱\n2379',pos:6.7},{label:'群聯\n8299',pos:7.4},{label:'國巨\n2327',pos:8.5},{label:'研華\n2395',pos:8.7},
-    {label:'世芯\n3661',pos:9.3},{label:'奇鋐\n3017',pos:22.4}
+    {label:'世芯\n3661',pos:9.3}
   ]});
   buildRoadmap();
   buildHistModule();
