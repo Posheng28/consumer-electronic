@@ -181,6 +181,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 .disc{background:var(--bg2);border:1px solid var(--yellowb);border-radius:10px;padding:14px 18px;font-size:.8rem;color:var(--tx2);margin:18px 0}
 .tooltip{position:fixed;pointer-events:none;background:#000;border:1px solid var(--bd);border-radius:8px;padding:8px 11px;font-size:.78rem;color:var(--tx);z-index:999;opacity:0;transition:opacity .1s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.5)}
 .src{font-size:.72rem;color:var(--tx2);opacity:.65;margin-top:-8px;margin-bottom:14px}
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}.source-card{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;border-top:3px solid var(--bd)}.source-card.fact{border-top-color:var(--green)}.source-card.forecast{border-top-color:var(--blue)}.source-card.rumor{border-top-color:var(--yellow)}.source-card h4{margin:0 0 8px;color:var(--tx3);font-size:.96rem}.source-card p{font-size:.84rem;margin:0;color:var(--tx2)}.source-link{font-size:.76rem;color:var(--tx2);margin-top:6px}.source-link a{color:var(--blue)}.watch-strong{color:var(--green);font-weight:700}.watch-weak{color:var(--red);font-weight:700}.matrix-note{font-size:.78rem;color:var(--tx2);margin-top:-6px;margin-bottom:12px}@media(max-width:980px){.source-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -189,6 +190,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <nav class="toc" id="toc">
   <h3>目錄</h3>
   <a href="#hero">封面 · 核心判斷</a>
+  <a href="#sdata">2 · 來源分級與最新驗證</a>
   <a href="#s3">3 · 2026 產業全景</a>
   <a href="#s4">4 · 記憶體缺料主軸</a>
   <a href="#scapex">4+ · AI 資本支出傳導鏈</a>
@@ -223,13 +225,34 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   </div>
 </header>
 
+<!-- ===== DATA CONFIDENCE / LATEST SOURCES ===== -->
+<section id="sdata">
+  <span class="sec-num">第 2 章 · 2026 最新資料核對</span>
+  <h2 class="sh">資料分級：已發生事實 / 預測 / 市場傳聞</h2>
+  <p>這版把可驗證公告、研究機構預測與尚未確認的市場傳聞分開，避免把「已經發生」和「可能發生」混在同一層。交易上，已發生事實可作 baseline，預測用來做情境權重，市場傳聞只能當選擇權。</p>
+  <div class="source-grid">
+    <div class="source-card fact"><h4>已發生事實</h4><p>Google I/O 2026 宣布 Android XR 智慧眼鏡路線；Meta 2026/05 已有 Ray-Ban Meta、Oakley Meta 與 Meta Ray-Ban Display 產品線；Microsoft 2026 Surface for Business 強調 on-device AI；Apple 2026/05 正式把 Apple Intelligence 擴到輔助使用情境。</p><div class="source-link">來源：<a href="https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/" target="_blank">Google</a>、<a href="https://about.fb.com/news/2026/05/which-meta-ai-glasses-are-right-for-you/" target="_blank">Meta</a>、<a href="https://blogs.windows.com/devices/2026/05/19/introducing-new-surface-devices-built-for-business-and-ai-acceleration/" target="_blank">Microsoft</a>、<a href="https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/" target="_blank">Apple</a></div></div>
+    <div class="source-card forecast"><h4>預測 / 模型值</h4><p>IDC 對 2026 半導體、PC、手機的最新預測；Gartner 對記憶體成本、AI PC 滲透與 PC/手機出貨的修正；TrendForce 對記憶體牆的價格判斷；Counterpoint 對手機與智慧眼鏡 tracker 的展望。</p><div class="source-link">來源：<a href="https://www.idc.com/resource-center/blog/semiconductor-market-to-surge-past-the-trillion-dollar-threshold-ai-infrastructure-drives-market-growth/" target="_blank">IDC</a>、<a href="https://www.gartner.com/en/newsroom/press-releases/2026-02-26-gartner-says-surging-memory-costs-will-reduce-global-pc-and-smartphone-shipments-in-2026" target="_blank">Gartner</a>、<a href="https://www.trendforce.com/insights/memory-wall" target="_blank">TrendForce</a>、<a href="https://counterpointresearch.com/en/insights/Smartphone-Shipments-in-2026-to-See-Sharpest-Decline-on-Record-as-Memory-Crisis-deepens" target="_blank">Counterpoint 手機</a>、<a href="https://counterpointresearch.com/en/insights/Global-Smart-Glasses-Shipments-Grew-139-Percent-YoY-in-H2-2025" target="_blank">Counterpoint 智慧眼鏡</a></div></div>
+    <div class="source-card rumor"><h4>市場傳聞 / 供應鏈選擇權</h4><p>摺疊 iPhone、Apple AI 眼鏡、Siri 使用外部模型、特定台廠打入尚未公開新機種等，只當 upside optionality。頁面中以黃色標籤標示，不當作已確認事實。</p></div>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>主題</th><th>2026 最新核對</th><th>分級</th><th>交易含義</th></tr></thead>
+    <tbody>
+      <tr><td>半導體 / 記憶體</td><td>IDC：2026 半導體收入 1.29 兆美元、YoY +52.8%；記憶體收入 5,947 億美元</td><td><span class="badge bb">預測</span></td><td>上游 AI / memory 強，不能直接外推為終端總量復甦</td></tr>
+      <tr><td>PC / AI PC</td><td>Gartner：2026 PC 出貨 -10.4%；IDC：PC -11.3%；Gartner 將 AI PC 50% 里程碑延到 2028</td><td><span class="badge bb">預測</span></td><td>AI PC 是規格升級，不是短期爆量；看商用高階 mix</td></tr>
+      <tr><td>智慧手機</td><td>IDC：2026 手機出貨 -12.9%；Counterpoint：-12.4%；Gartner：手機平均價格約 +13%</td><td><span class="badge bb">預測</span></td><td>高階 ASP 與 AI spec 可撐部分供應商，低階量受傷</td></tr>
+      <tr><td>AI 眼鏡</td><td>Counterpoint：H2 2025 智慧眼鏡出貨 YoY +139%，AI 眼鏡占 88%，Meta 份額 82%</td><td><span class="badge bg">已發生事實</span></td><td>新品類已被驗證，但放量仍看續航、散熱、隱私與微顯示成本</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
 <!-- ===== 5 JUDGMENTS ===== -->
 <section id="judges" style="padding-top:10px">
   <span class="sec-num">摘要 · SUMMARY</span>
   <h2 class="sh">五個核心判斷</h2>
   <div class="grid g3" style="margin-bottom:18px">
-    <div class="judge" data-n="1"><div class="jt">2026 是 setup year，不是爆量年</div><p>全球電子產業 2026 總出貨值估 3.3 兆美元、年增 16.2%，但動能集中在資料中心與工業。IDC 4 月將智慧手機出貨下修為年減 12.9%（十年最低），ASP 卻升至歷史新高 523 美元——典型「量縮價漲」。</p></div>
-    <div class="judge" data-n="2"><div class="jt">記憶體缺料是決定性變數</div><p>AI 基礎設施排擠標準型記憶體產能。DRAM 2025 全年漲約 172%，2026 Q1 合約價再 QoQ +90–95%。它同時是壓力來源、也是分化力量。</p></div>
+    <div class="judge" data-n="1"><div class="jt">2026 是 setup year，不是爆量年</div><p><span class="badge bb">預測</span> IDC 估 2026 全球半導體收入 1.29 兆美元、YoY +52.8%，但同時把 PC 出貨修到 -11.3%、智慧手機 -12.9%；Gartner 也估 PC -10.4%、手機 -8.4%。結論是上游 AI/記憶體強，終端總量仍弱。</p></div>
+    <div class="judge" data-n="2"><div class="jt">記憶體缺料是決定性變數</div><p><span class="badge bb">預測</span> Gartner 指記憶體價格 2026 可能上漲約 130%，TrendForce 也以「memory wall」描述 DRAM 年度漲幅可能超過 70%。它同時是上游受惠、終端受壓、供應鏈分化的主因。</p></div>
     <div class="judge" data-n="3"><div class="jt">終端會分層，trigger 各不同</div><p>AI PC 與旗艦手機先形成「規格換機」，AI 眼鏡是最像新週期起點的新品類，大眾/低階產品反被成本擠壓。同掛「消費電子」名牌，受惠天差地別。</p></div>
     <div class="judge" data-n="4"><div class="jt">供需重疊到價格發動有時間差</div><p>對照 2017–18 記憶體循環、2020–21 PC 榮景：需求訊號 → 庫存緩衝 → 數季後價格才發動 → 接著容易過熱反轉。本輪同樣需要「時間厚度」。</p></div>
     <div class="judge" data-n="5"><div class="jt">法說會語言已驗證分化</div><p>台積電、Apple、Lenovo/Dell/HP、瑞昱、致新口徑高度一致：AI/HPC 強勁填補產能、消費端被記憶體成本壓抑、品牌靠漲價轉嫁、毛利率承壓。</p></div>
@@ -242,10 +265,10 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       <thead><tr><th>主題</th><th>方向</th><th>一句話邏輯</th></tr></thead>
       <tbody>
         <tr><td><b>AI 伺服器／ASIC 鏈</b></td><td><span class="badge bg">確定性最高</span></td><td>需求明確、能見度長，是 2026 的主引擎</td></tr>
-        <tr><td><b>AI PC 平台與零組件</b></td><td><span class="badge bb">結構性受惠</span></td><td>滲透率加速（2026 約 54–60%），但總量未必爆發</td></tr>
-        <tr><td><b>AI 眼鏡專屬鏈</b></td><td><span class="badge by">高成長·波動大</span></td><td>出貨基期低、CAGR 高，進入中期驗證階段</td></tr>
-        <tr><td><b>旗艦手機供應鏈</b></td><td><span class="badge bb">贏家集中</span></td><td>Apple 重返成長，受惠集中少數高技術門檻供應商</td></tr>
-        <tr><td><b>記憶體</b></td><td><span class="badge bg">賣方市場</span></td><td>缺料延續至 2027，價格 2026 下半年見頂</td></tr>
+        <tr><td><b>AI PC 平台與零組件</b></td><td><span class="badge bb">結構性受惠</span></td><td>規格升級確定，但 Gartner 已把 AI PC 50% 滲透里程碑延到 2028，總量被記憶體壓住</td></tr>
+        <tr><td><b>AI 眼鏡專屬鏈</b></td><td><span class="badge by">高成長·波動大</span></td><td>Counterpoint 已驗證 H2'25 智慧眼鏡 +139%，但 2026 放量仍看電池、熱、微顯示與隱私</td></tr>
+        <tr><td><b>旗艦手機供應鏈</b></td><td><span class="badge bb">贏家集中</span></td><td>手機總量下修，但高階機靠 AI、鏡頭、記憶體與折疊規格維持 ASP / BOM 升級</td></tr>
+        <tr><td><b>記憶體</b></td><td><span class="badge bg">賣方市場</span></td><td>IDC / Gartner / TrendForce 均指向 2026 供給吃緊，缺料可能延到 2027</td></tr>
         <tr><td><b>低階／大眾消費電子</b></td><td><span class="badge br">受擠壓</span></td><td>成本上升、需求平緩，毛利率承壓</td></tr>
       </tbody>
     </table>
@@ -257,29 +280,29 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <section id="s3">
   <span class="sec-num">第 3 章</span>
   <h2 class="sh">總體格局：2026 電子產業全景</h2>
-  <p><strong>大盤子是好的，但動能不在消費電子。</strong>工研院 CES 2026 報告指出，全球 2026 電子產業總出貨值估達 3.3 兆美元、年增 16.2%，是成長高峰；但主要動能來自工業應用與資料中心，<em>而非傳統消費性電子</em>。個人 PC 呈現「量縮價漲」，工研院唯一點名的消費黑馬是智慧眼鏡。</p>
+  <p><strong>大盤子是好的，但動能不在消費電子。</strong><span class="badge bb">預測</span> IDC 2026 最新模型把全球半導體收入上修到 <b>1.29 兆美元、YoY +52.8%</b>，其中記憶體收入約 <b>5,947 億美元</b>；但同一組 2026 更新也把 PC 與智慧手機出貨大幅下修。換句話說，2026 是「上游半導體/記憶體強、終端出貨弱」的錯位年。</p>
 
   <div class="grid g4">
-    <div class="kpi"><div class="v bl">3.3兆</div><div class="l">全球電子產業總出貨值</div><div class="s">YoY +16.2%</div></div>
-    <div class="kpi"><div class="v up">+17.8%</div><div class="l">全球半導體市場 9,098 億美元</div><div class="s">Gartner 2025/09</div></div>
+    <div class="kpi"><div class="v bl">1.29兆</div><div class="l">2026 全球半導體營收</div><div class="s">IDC 2026/04，YoY +52.8%</div></div>
+    <div class="kpi"><div class="v up">5,947億</div><div class="l">2026 記憶體營收</div><div class="s">IDC，AI/HBM 排擠標準型供給</div></div>
     <div class="kpi"><div class="v up">77%</div><div class="l">AI 半導體終端：compute 佔比</div><div class="s">2025 年 53% → 2026 年 77%</div></div>
-    <div class="kpi"><div class="v dn">2%</div><div class="l">AI 半導體終端：消費電子佔比</div><div class="s">重疊部分被資料中心單向吃走</div></div>
+    <div class="kpi"><div class="v dn">-11%~-13%</div><div class="l">2026 PC / 手機出貨壓力</div><div class="s">IDC / Gartner / Counterpoint 下修</div></div>
   </div>
 
   <div class="callout co-blue"><span class="ct">📊 2026 最新數據追蹤（截至 2026/05，外部資料補強）</span>
     <ul class="clist">
-      <li><b>半導體</b>：2025 全球銷售 $7,917 億(+25.6%) 創高；2026 上看 ~$1 兆；3 月單月 $995 億(YoY +79%)（SIA/WSTS）</li>
+      <li><b>半導體</b>：IDC 估 2026 全球半導體收入 $1.29 兆、YoY +52.8%；其中記憶體 $5,947 億，是 AI/HBM 排擠標準型供給的核心</li>
       <li><b>台灣</b>：3 月外銷訂單 $911 億(YoY +65.9%，16 年最快)；Q1 GDP +13.7%——但<b>手機營收環比 -11%</b>，AI 強、消費弱的分化在出口數據上也看得到</li>
-      <li><b>手機</b>：Q1’26 全球出貨約 -6%(Counterpoint)/-4%(IDC)，Apple 首度在 Q1 登頂；ASP 創高</li>
-      <li><b>PC</b>：Q1’26 +4%(Gartner) 但被「漲價前拉貨」灌水，全年估 -10.4%</li>
-      <li class="arr"><b>記憶體</b>：Q2’26 合約價估再漲 DRAM +58–63%、NAND +70–75%；缺料恐延續至 2027–2028</li>
+      <li><b>手機</b>：IDC 估 2026 出貨 -12.9%、Counterpoint -12.4%、Gartner -8.4%；Gartner 估手機平均價格約 +13%</li>
+      <li><b>PC</b>：Gartner 估 2026 PC 出貨 -10.4%，IDC 估 -11.3%；AI PC 50% 滲透里程碑延到 2028</li>
+      <li class="arr"><b>記憶體</b>：TrendForce 判斷 DRAM 2026 年度漲幅可能超過 70%；Gartner 估記憶體價格約 +130%，缺料可能延續到 2027</li>
     </ul>
   </div>
 
   <div class="grid g2">
     <div class="chart-wrap">
-      <div class="ctit">2026 各終端出貨成長落差</div>
-      <div class="csub">半導體與資料中心強勁，傳統消費電子溫和或衰退（含缺料衝擊）</div>
+      <div class="ctit">2026：上游半導體強，終端出貨弱</div>
+      <div class="csub">IDC / Gartner / Counterpoint 最新更新：半導體收入大增，但 PC、手機同步下修</div>
       <div id="chart-growth"></div>
     </div>
     <div class="chart-wrap">
@@ -403,35 +426,35 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <h2 class="sh">終端分層與各品類拆解</h2>
   <p>需求端最值得問的不是「消費電子會不會復甦」，而是<strong>哪一種終端會先變成需求 trigger</strong>。排序大致是：AI PC 與旗艦手機先形成規格換機 → AI 眼鏡成為新品類催化器 → 其他大眾型消費電子仍偏慢。</p>
 
-  <h3>5.1 AI PC：滲透率加速，但總量未必同步爆發</h3>
+  <h3>5.1 AI PC：規格升級確定，但滲透率被記憶體成本延後</h3>
   <div class="grid g2">
     <div class="chart-wrap">
-      <div class="ctit">AI PC 滲透率趨勢</div>
-      <div class="csub">2026 突破 50%、2027 逼近 80%、2028 幾乎全面 AI PC 化（綜合多家預估）</div>
+      <div class="ctit">AI PC 滲透率：Gartner 將 50% 里程碑延到 2028</div>
+      <div class="csub">記憶體成本使 2026 由「爆發滲透」修正為「高階商用先行」</div>
       <div id="chart-aipc"></div>
     </div>
     <div>
       <div class="callout co-green" style="margin-top:0"><span class="ct">催化劑①｜Win10 換機剛需</span>Windows 10 一般支援已於 2025/10/14 結束。全球約 60% 用戶已轉 Win11，仍有 30–40% 待換機。2026 Q1 全球 PC 出貨 +3.2% 至 6,330 萬台，但<b>遷移動能會在 2026 下半消退</b>。</div>
-      <div class="callout co-blue"><span class="ct">催化劑②｜Copilot+ PC 硬體門檻</span>NPU > 40 TOPS、記憶體 ≥ 16 GB、SSD ≥ 256 GB，把中高階筆電 BOM 往上拉。消費者平均願為本地生成式 AI 付約 12% 溢價（約 118 美元）。</div>
+      <div class="callout co-blue"><span class="ct">催化劑②｜Copilot+ PC 硬體門檻</span><span class="badge bg">已發生事實</span> Microsoft Copilot+ PC 門檻包含 NPU 40+ TOPS、記憶體 16GB、SSD 256GB；2026 Surface for Business 強調 on-device AI、Wi-Fi 7、可更換 SSD 與 Windows AI Foundry API。硬體門檻把中高階筆電 BOM 往上拉。</div>
     </div>
   </div>
-  <div class="callout co-yellow"><span class="ct">2026 PC 出貨量的分歧</span>國泰投顧估 2026 全球 PC 持平於 2.7 億台；IDC（3 月）因記憶體缺貨把預估由 -2.4% 加劇至 <b>-11.5%</b>；瑞昱引用 IDC 估衰退 11%。差異在缺料力道假設，但兩派都同意：<b>售價調漲使「營收」可望持平，受傷的是「出貨量」。</b></div>
+  <div class="callout co-yellow"><span class="ct">2026 PC 出貨量的分歧</span><span class="badge bb">預測</span> Gartner 估 2026 PC 出貨 -10.4%、IDC 估 -11.3%。差異在缺料力道假設，但兩派都同意：售價調漲可支撐部分營收，受傷的是出貨量與低階需求。</div>
 
   <h3>5.2 智慧手機：高階有韌性、低階被擠壓</h3>
   <div class="grid g4">
     <div class="kpi"><div class="v dn">-12.9%</div><div class="l">2026 出貨量約 11 億支</div><div class="s">十年最低（IDC 4 月）</div></div>
-    <div class="kpi"><div class="v up">+14%</div><div class="l">ASP 達歷史新高 523 美元</div><div class="s">量縮價漲</div></div>
-    <div class="kpi"><div class="v bl">5,789億</div><div class="l">市場總值（美元）創高</div><div class="s">量縮但值增</div></div>
+    <div class="kpi"><div class="v up">+13%</div><div class="l">Gartner 估手機平均價格</div><div class="s">記憶體成本轉嫁</div></div>
+    <div class="kpi"><div class="v bl">-0.5%</div><div class="l">IDC 估手機收入變化</div><div class="s">量縮、ASP 撐住收入</div></div>
     <div class="kpi"><div class="v yl">25–35%</div><div class="l">記憶體佔中低階手機 BOM</div><div class="s">低階首當其衝</div></div>
   </div>
   <div class="chart-wrap">
-    <div class="ctit">智慧手機：出貨量縮、ASP 創高（IDC 2026）</div>
-    <div class="csub">「源自記憶體供應鏈、海嘯般的衝擊」——受傷最深是低階 Android</div>
+    <div class="ctit">智慧手機：出貨量縮、價格上行（IDC/Gartner/Counterpoint 2026）</div>
+    <div class="csub">記憶體成本使低階 Android 受傷，高階旗艦仍靠 AI / camera / display spec 維持 BOM 升級</div>
     <div id="chart-phone"></div>
   </div>
 
   <h4>Apple「重返榮耀」——但與 2014 不同</h4>
-  <p>宏遠投顧核心論述：iPhone 在 i17 及後續機型帶動下「重返榮耀」。i16/i17 美中前 10 日銷量：整體 +14%、Pro/Pro Max +12%、<em>標準版 +31%</em>（主要成長動能）。Apple 高階手機（&gt;600 美元）市佔 2024 達 66%。2026 產品線：年底首款摺疊手機、首款 AI 眼鏡；新一代 Siri（以 Gemini 為基礎）促成新一波換機。</p>
+  <p><span class="badge bg">已發生事實</span> Apple 2026/05 正式宣布把 Apple Intelligence 擴到輔助使用情境，包含 VoiceOver、Magnifier、Voice Control、Reader 與 Vision Pro 控制等，代表端側 AI 正在滲入系統層。<span class="badge by">市場傳聞</span> 摺疊 iPhone、Apple AI 眼鏡、Siri 使用外部模型等仍屬未發布產品線，只能作情境與供應鏈選擇權，不可寫成已確認事實。</p>
   <div class="grid g2">
     <div class="chart-wrap">
       <div class="ctit">Apple 損益預估（宏遠投顧／彭博）</div>
@@ -458,7 +481,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   </div>
 
   <h3>5.3 AI 眼鏡：最像「新週期起點」的品類</h3>
-  <p>AI 眼鏡不是傳統 VR/AR 的延伸，而是以日常穿戴、拍攝、語音、翻譯、即時助理為核心的新主流路徑。基期低、成長率高、平台級生態競爭已開打。<strong>Ray-Ban Meta</strong> 2025 年 Ray-Ban 與 Oakley 合計售出 700 萬副、累計約 900 萬副；Meta 規劃 2026 年底年產能拉到 1,000 萬副。Meta 因「需求空前、庫存有限」暫緩 800 美元 Display 國際推廣。</p>
+  <p>AI 眼鏡不是傳統 VR/AR 的延伸，而是以日常穿戴、拍攝、語音、翻譯、即時助理為核心的新主流路徑。<span class="badge bg">已發生事實</span> Counterpoint 指出 H2 2025 全球智慧眼鏡出貨 YoY +139%、AI 眼鏡占 88%、Meta 份額升至 82%；Meta 2026/05 產品線已包含 Ray-Ban Meta、Oakley Meta 與 799 美元起的 Meta Ray-Ban Display。<span class="badge bg">已發生事實</span> Google I/O 2026 宣布 Android XR 智慧眼鏡今年秋季先推 audio glasses，Samsung、Gentle Monster、Warby Parker 參與。<span class="badge bb">預測</span> 2026 是否放量，取決於電池/熱、相機隱私、微顯示成本與 app 生態。</p>
   <div class="chart-wrap">
     <div class="ctit">AI 眼鏡出貨量預估（DIGITIMES，百萬副）</div>
     <div class="csub">無顯示 AI 眼鏡 2025→2030 約 8.7 倍；AI+AR 眼鏡爆發成長</div>
@@ -632,21 +655,24 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <!-- ===== S CHIP MAP ===== -->
 <section id="schip">
   <span class="sec-num">★ 跨終端整合</span>
-  <h2 class="sh">AI 終端晶片地圖：同一條矽供應鏈，五種終端</h2>
-  <p>把五種 AI 終端攤在一起看，會發現它們吃的是<strong>同一套零組件 DNA</strong>——NPU/SoC 的 TOPS 一路往上、記憶體幾乎都壓在 LPDDR5X、再加上感測與連接。這正是「AI 往終端移動」對供應鏈的真正含義：<em>受惠不是落在單一品類，而是沿著 BOM 往上游（記憶體、先進製程、感測、連接、散熱）一起傳導</em>。</p>
+  <h2 class="sh">AI 終端晶片地圖：八種終端、同一條矽供應鏈</h2>
+  <p>把 AI PC、AI 手機、AI 眼鏡、穿戴/耳機、智慧家庭、車用、機器人、IPC/edge AI 攤在一起看，會發現它們吃的是<strong>同一套零組件 DNA</strong>：NPU/SoC、LPDDR/SSD、感測、連接、電池/散熱、光學/顯示。這正是「AI 往終端移動」對供應鏈的真正含義：受惠不是落在單一品類，而是沿著 BOM 往上游一起傳導。</p>
   <div class="scroll"><table>
-    <thead><tr><th>AI 終端</th><th>運算 / AI 晶片</th><th>記憶體</th><th>感測 / 其他關鍵</th><th>代表台廠</th></tr></thead>
+    <thead><tr><th>AI 終端</th><th>晶片</th><th>運算</th><th>記憶體</th><th>儲存</th><th>感測</th><th>連接</th><th>電池 / 散熱</th><th>光學 / 顯示</th><th>台廠位置</th></tr></thead>
     <tbody>
-      <tr><td><b>AI PC</b></td><td>Intel Panther Lake(18A,NPU 50T)、AMD Ryzen AI、Snapdragon X2(80T)</td><td>LPDDR5X ≥16GB</td><td>電源管理、散熱、連接</td><td>華碩2357、技嘉2376、瑞昱2379、嘉澤3533</td></tr>
-      <tr><td><b>AI 手機</b></td><td>Snapdragon 8 Elite Gen5、聯發科 Dimensity 9500、Apple A19 Pro</td><td>LPDDR5X 12GB+（旗艦標配）</td><td>CIS 影像感測、鏡頭、MLCC</td><td>台積電2330、大立光3008、國巨2327</td></tr>
-      <tr><td><b>AI 眼鏡</b></td><td>Snapdragon AR1+ Gen1；Micro-OLED / LCoS 微顯示</td><td>低功耗、小容量</td><td>光波導、Micro-LED、軟板、微電池、感測</td><td>錼創6854、揚明光3504、玉晶光3406、Largan 3008</td></tr>
-      <tr><td><b>機器人</b></td><td>NVIDIA Jetson Thor（2,070 TFLOPS）</td><td><b>128GB LPDDR5X</b>（含量最大）</td><td>力矩/觸覺感測、IMU、減速機、馬達</td><td>上銀2049、亞德客1590、和大1536、鴻海2317</td></tr>
-      <tr><td><b>IPC / 邊緣</b></td><td>Intel Core Ultra、Jetson、Hailo、RK3588</td><td>LPDDR5X（含量上升）</td><td>連接、插槽、散熱、長壽命料件</td><td>研華2395、樺漢6414、嘉澤3533</td></tr>
+      <tr><td><b>AI PC</b></td><td>Intel Core Ultra、AMD Ryzen AI、Qualcomm Snapdragon X、Apple M</td><td>CPU+GPU+NPU；Copilot+ 40+ TOPS</td><td>LPDDR5X/DDR5、LPCAMM2；16GB 成低標</td><td>PCIe SSD、NAND 控制 IC</td><td>camera、mic array、touch/HID</td><td>Wi-Fi 7、BT、USB4/Thunderbolt</td><td>VC、熱管、石墨、高速連接器</td><td>OLED、Mini LED、高階 webcam</td><td>廣達、仁寶、緯創、華碩、宏碁、瑞昱、嘉澤、雙鴻、奇鋐</td></tr>
+      <tr><td><b>AI 手機</b></td><td>Apple A/M、Snapdragon、Dimensity、Exynos</td><td>on-device LLM / ISP / NPU</td><td>LPDDR5X 12GB+</td><td>UFS / NAND</td><td>Sony CIS、ToF、IMU、UWB</td><td>Wi-Fi 7、RF 前端、衛星通訊</td><td>VC、石墨、快充、BMS</td><td>鏡頭、OLED、折疊鉸鏈</td><td>台積電、大立光、玉晶光、采鈺、國巨、華通、臻鼎、鴻海</td></tr>
+      <tr><td><b>AI 眼鏡</b></td><td>Qualcomm AR/XR、MediaTek/低功耗 MCU、Meta/Google 平台</td><td>低功耗 always-on AI、音訊/影像推論</td><td>低功耗 LPDDR</td><td>小型 NAND / eMMC</td><td>相機、IMU、麥克風、環境光</td><td>BLE、Wi-Fi、UWB、手機 tethering</td><td>微電池、熱擴散、超薄機構</td><td>Micro-LED/OLEDoS/LCoS、光波導、鏡頭</td><td>錼創、玉晶光、大立光、亞光、揚明光、達邁、興能高、美律、鈺太</td></tr>
+      <tr><td><b>穿戴 / TWS</b></td><td>Apple S/H、Qualcomm W/S、Ambiq、Nordic、BES</td><td>音訊 DSP、健康 ML、always-on sensor hub</td><td>SRAM / LPDDR 小容量</td><td>Flash / NAND</td><td>PPG、IMU、麥克風、溫度/壓力</td><td>BLE、UWB、低功耗 Wi-Fi</td><td>微型電池、無線充電、聲學腔體</td><td>Micro OLED / LTPO、聲學元件</td><td>美律、鈺太、晶技、臻鼎、興能高、台積電</td></tr>
+      <tr><td><b>智慧家庭</b></td><td>Amazon/Google/Apple/Samsung edge AI；NXP、Realtek、MediaTek</td><td>camera/audio edge AI、Matter hub</td><td>DDR / embedded RAM</td><td>NAND / embedded Flash</td><td>camera、mmWave、麥克風、環境感測</td><td>Wi-Fi 7、Thread、Matter、BT</td><td>電源模組、散熱、長供料</td><td>鏡頭模組、智慧螢幕</td><td>瑞昱、聯發科、晶睿、智邦、神準、中磊、正文、台達電</td></tr>
+      <tr><td><b>車用 AI</b></td><td>NVIDIA DRIVE、Qualcomm Ride、Mobileye、Renesas/NXP/Infineon/ST/TI</td><td>ADAS / cockpit AI / sensor fusion</td><td>車規 LPDDR</td><td>UFS、NOR/NAND</td><td>CIS、雷達、LiDAR、IMU</td><td>Ethernet、UWB、C-V2X</td><td>車用散熱、功率半導體、BMS</td><td>HUD、OLED、車載鏡頭</td><td>台積電、同致、怡利電、朋程、為升、胡連、貿聯、台達電</td></tr>
+      <tr><td><b>機器人</b></td><td>NVIDIA Jetson Thor/Orin、Qualcomm Robotics、Intel/AMD edge CPU、Hailo/SiMa.ai</td><td>多模態感知、運動控制、邊緣推論</td><td>LPDDR5X</td><td>SSD；單機含量高</td><td>深度相機、LiDAR、力覺/觸覺、IMU、編碼器</td><td>EtherCAT、Ethernet、Wi-Fi 7</td><td>電池/BMS、關節散熱、馬達、減速機、螺桿</td><td>深度鏡頭、工控顯示</td><td>上銀、台灣精銳、全球傳動、大銀微、台達電、信邦、貿聯、亞光、鴻海</td></tr>
+      <tr><td><b>IPC / Edge AI</b></td><td>Intel Core Ultra、NVIDIA Jetson、Hailo、Rockchip、NXP、AMD</td><td>AOI、機器視覺、工業 edge AI</td><td>DDR5 / LPDDR5X</td><td>SSD、工規長供料</td><td>camera、I/O、工業感測</td><td>Ethernet、Wi-Fi、TSN、fieldbus</td><td>無風扇散熱、長壽命電源</td><td>工規面板、AOI 鏡頭</td><td>研華、樺漢、凌華、友通、嘉澤、艾讯、瑞昱、台達電</td></tr>
     </tbody>
   </table></div>
   <div class="callout co-blue"><span class="ct">三個共同主軸（受惠交集）</span>
     <ul class="clist">
-      <li><b>記憶體</b>：五種終端全壓在 LPDDR5X，機器人/邊緣盒單機含量更跳增——直接放大缺料行情（見第 4 章）</li>
+      <li><b>記憶體</b>：八種終端共同推升 LPDDR5X / DDR5 / SSD 含量，機器人與邊緣盒單機含量更高——直接放大缺料行情（見第 4 章）</li>
       <li><b>先進製程代工</b>：從手機 SoC、AI PC 到 Jetson、AR SoC，最終都回到台積電（2330）</li>
       <li class="arr">感測 + 連接 + 散熱：CIS、光波導、力覺感測、CPU socket、VC 均水漲船高——「分層」之外的「共同底層」</li>
     </ul>
@@ -1003,6 +1029,22 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       </ul>
     </div>
   </div>
+  <h3>9.2 全球龍頭 × 台廠供應鏈矩陣</h3>
+  <p class="matrix-note">交易室視角不要只看台股名單，而要先看全球平台與規格制定者，再回推台廠卡在哪個 BOM 層。標示為「平台 / 品牌」者多掌握設計與需求；台廠多在代工、模組、零組件、散熱、連接、光學與 ODM 位置分食。</p>
+  <div class="scroll"><table>
+    <thead><tr><th>鏈條</th><th>全球龍頭 / 平台</th><th>台廠供應鏈位置</th><th>研究重點</th></tr></thead>
+    <tbody>
+      <tr><td><b>品牌 / OS / 生態</b></td><td>Apple、Samsung、Google、Microsoft、Meta、Amazon、Lenovo、HP、Dell、Xiaomi</td><td>鴻海、廣達、仁寶、緯創、和碩、英業達、華碩、宏碁</td><td>新品規格與平台門檻決定 BOM 升級速度；台廠看 ODM share、產品 mix 與成本轉嫁能力</td></tr>
+      <tr><td><b>AI SoC / NPU / ASIC</b></td><td>NVIDIA、Qualcomm、Intel、AMD、Apple Silicon、Samsung LSI、Google TPU、Microsoft Maia、MediaTek</td><td>台積電、聯發科、創意、世芯-KY、智原、日月光投控、京元電</td><td>先進製程、封裝與測試是 AI 終端和雲端共同底層；端側 AI 放量仍回到晶圓/封測產能</td></tr>
+      <tr><td><b>記憶體 / 儲存</b></td><td>Samsung、SK hynix、Micron、Kioxia、Western Digital</td><td>南亞科、華邦電、群聯、威剛、十銓、創見、宇瞻、慧榮</td><td>2026 是最關鍵變數：價格上行利模組/控制 IC，但壓縮 PC、手機、穿戴與智慧家庭出貨</td></tr>
+      <tr><td><b>感測 / 光學</b></td><td>Sony Semiconductor、STMicro、Bosch、TDK、ams OSRAM、Lumentum、Coherent</td><td>大立光、玉晶光、亞光、揚明光、先進光、采鈺、原相、致伸、鈺太</td><td>AI 眼鏡、車用、機器人與 IPC 都需要更多 camera、IMU、麥克風、深度感測；良率與小型化是護城河</td></tr>
+      <tr><td><b>連接 / RF / 網通</b></td><td>Qualcomm、Broadcom、MediaTek、Murata、Skyworks、Qorvo、NXP、Marvell</td><td>瑞昱、聯發科、智邦、啟碁、神準、中磊、智易、正文、明泰、耀登</td><td>Wi-Fi 7、UWB、Thread/Matter、車用 Ethernet 與邊緣網通升級，受惠邏輯不同於單純出貨復甦</td></tr>
+      <tr><td><b>電池 / 電源 / 散熱</b></td><td>ATL、TDK、TI、Infineon、ST、NXP、Delta、Sunon</td><td>台達電、光寶、群電、康舒、全漢、雙鴻、奇鋐、建準、健策、興能高</td><td>端側 AI 的瓶頸往往不是算力，而是續航與熱；AI PC、眼鏡、機器人與 IPC 都推升高效率電源與散熱價值</td></tr>
+      <tr><td><b>顯示 / Microdisplay / 光波導</b></td><td>Samsung Display、LG Display、BOE、Sony、JBD、Lumus、DigiLens、Corning</td><td>友達、群創、錼創、達邁、亞光、揚明光、玉晶光</td><td>AI 眼鏡能否從 audio glasses 跨到 display glasses，取決於亮度、功耗、良率、光波導成本與外觀接受度</td></tr>
+      <tr><td><b>組裝 / 機構 / EMS</b></td><td>Foxconn、Jabil、Flex、Luxshare、BYD Electronics、Goertek</td><td>鴻海、廣達、仁寶、緯創、和碩、英業達、可成、鎧勝、貿聯、信邦</td><td>台廠最強的是複雜供應鏈整合，但毛利取決於新平台早期 NPI、關鍵模組與客戶分散度</td></tr>
+    </tbody>
+  </table></div>
+
   <h4>更多消費電子台廠（依次產業分類）</h4>
   <p style="font-size:.88rem;color:var(--tx2)">不只前述幾檔。把消費電子供應鏈攤開，台股相關標的其實很廣——下面依次產業列出，並標示在記憶體缺料這一輪偏<span class="neg">受壓</span>、偏<span class="pos">受惠</span>或<span class="hl">混合</span>。</p>
   <div class="scards">
@@ -1160,17 +1202,17 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 
   <h3>11.2 監測指標儀表板</h3>
   <div class="scroll"><table>
-    <thead><tr><th>類別</th><th>指標</th><th>看什麼</th><th>訊號意義</th></tr></thead>
+    <thead><tr><th>類別</th><th>指標</th><th>看什麼</th><th>轉強判準</th><th>轉弱判準</th></tr></thead>
     <tbody>
-      <tr><td><span class="badge bb">供給</span></td><td>DRAM/NAND 合約價與現貨價</td><td>是否在 2026 Q3–Q4 見頂</td><td>見頂回落 = 成本壓力緩解，利於擴散</td></tr>
-      <tr><td><span class="badge bb">供給</span></td><td>記憶體廠 CapEx 與擴產進度</td><td>標準型產能是否回補</td><td>大幅擴產 = 反轉風險升高</td></tr>
-      <tr><td><span class="badge bg">需求</span></td><td>IDC/Counterpoint 出貨預估修正</td><td>上修或下修</td><td>連續上修 = 擴散訊號</td></tr>
-      <tr><td><span class="badge bg">需求</span></td><td>AI PC 滲透率實際 vs 預估</td><td>是否達標 54–60%</td><td>達標 = 規格換機如期</td></tr>
-      <tr><td><span class="badge bg">需求</span></td><td>AI 眼鏡季度出貨與產能</td><td>Ray-Ban Meta 放量速度</td><td>超預期 = 新品類擴散</td></tr>
-      <tr><td><span class="badge by">庫存</span></td><td>品牌廠零組件與通路庫存天數</td><td>庫存去化進度</td><td>庫存高檔 = 透支風險</td></tr>
-      <tr><td><span class="badge bb">個股</span></td><td>法說會口徑（毛利率、能見度）</td><td>是否仍「漲價撐、毛利壓」</td><td>轉為「需求回溫」= 擴散</td></tr>
-      <tr><td><span class="badge bb">個股</span></td><td>消費比重高個股 mix 轉型</td><td>AI-ready 營收佔比</td><td>佔比上升 = re-rating 契機</td></tr>
-      <tr><td><span class="badge br">總體</span></td><td>CSP CapEx 與 AI 營收落差</td><td>落差是否收斂</td><td>落差擴大 = 泡沫疑慮升溫</td></tr>
+      <tr><td><span class="badge bb">供給</span></td><td>DRAM / NAND 合約價與現貨價</td><td>月報、TrendForce、通路報價</td><td><span class="watch-strong">漲幅收斂且交期縮短</span>：終端成本壓力緩解，擴散機率上升</td><td><span class="watch-weak">報價再加速、缺貨延到 2027+</span>：AI PC/手機/智慧家庭量被壓抑</td></tr>
+      <tr><td><span class="badge bb">供給</span></td><td>記憶體廠 CapEx / 產能配置</td><td>HBM vs commodity DRAM/NAND 配置</td><td><span class="watch-strong">標準型產能回補</span>，但未出現過度擴產</td><td><span class="watch-weak">大幅擴產或庫存回升</span>：價格循環反轉風險升高</td></tr>
+      <tr><td><span class="badge bg">需求</span></td><td>IDC / Gartner / Counterpoint 出貨修正</td><td>PC、手機、穿戴、眼鏡季度修正</td><td><span class="watch-strong">連兩季上修或下修幅度收斂</span>：總量落底</td><td><span class="watch-weak">持續下修</span>：記憶體價格與終端需求互相傷害</td></tr>
+      <tr><td><span class="badge bg">需求</span></td><td>AI PC mix 與 Copilot+ 滲透</td><td>40+ TOPS NPU、16GB+ DRAM、商用換機</td><td><span class="watch-strong">高階商用機種 mix 升、ASP 能轉嫁</span></td><td><span class="watch-weak">品牌降規、延後採購</span>：Gartner 50% 里程碑再後移</td></tr>
+      <tr><td><span class="badge bg">需求</span></td><td>AI 眼鏡 sell-through / 退貨率</td><td>Meta、Google Android XR、通路庫存</td><td><span class="watch-strong">新品連續補貨、退貨低、開發者工具增加</span></td><td><span class="watch-weak">隱私爭議、續航/發熱負評、通路庫存累積</span></td></tr>
+      <tr><td><span class="badge bg">需求</span></td><td>車用、機器人、IPC edge AI 訂單</td><td>Jetson / Hailo / 工業 PC / 機器視覺出貨</td><td><span class="watch-strong">專案由 PoC 轉量產、長單增加</span></td><td><span class="watch-weak">只停在展示機或一次性專案</span>，缺少重複採購</td></tr>
+      <tr><td><span class="badge by">庫存</span></td><td>品牌廠零組件與通路庫存天數</td><td>法說、財報、通路調查</td><td><span class="watch-strong">庫存天數下降且毛利率穩住</span></td><td><span class="watch-weak">庫存升、折扣升、sell-in 大於 sell-through</span></td></tr>
+      <tr><td><span class="badge bb">個股</span></td><td>法說會口徑</td><td>毛利率、能見度、客戶拉貨</td><td><span class="watch-strong">從「漲價撐」轉為「需求回溫 / 新品放量」</span></td><td><span class="watch-weak">只靠漲價但量不動、毛利仍壓</span></td></tr>
+      <tr><td><span class="badge br">總體</span></td><td>CSP CapEx 與 AI 變現</td><td>雲端資本支出、AI 收入、廣告/企業軟體變現</td><td><span class="watch-strong">CapEx 增速放緩但 AI 收入加速</span>：估值壓力下降</td><td><span class="watch-weak">CapEx 繼續上修、收入跟不上</span>：泡沫疑慮升溫</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -1192,6 +1234,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <section id="sfoot">
   <footer>
     <p>原始報告完成日期：2026 年 5 月 25 日。互動網頁版由 Claude 依原始 Markdown 報告產生，個股股價區段串接 TWSE 官方公開資料。</p>
+    <p>Codex 補強日期：2026 年 5 月 26 日。新增 2026 最新來源驗證、資訊分級、全球龍頭/台廠矩陣、八大 AI 終端 BOM 地圖與監測儀表板。</p>
     <p style="color:var(--yellow);margin-top:8px">⚠️ 本報告為產業研究與資訊彙整，部分內容含預測值，非已實現數據。所引述之目標價與評等均轉述自原始券商報告，<b>不構成投資建議</b>。投資決策請自行判斷。</p>
   </footer>
 </section>
@@ -1390,8 +1433,8 @@ function rangeBar(id,{cats,w=560,h=300,unit='%'}){
 /* ============ build report charts ============ */
 function buildCharts(){
   barChart('chart-growth',{
-    labels:['半導體\n+17.8%','資料處理\n+25.3%','PC(Gartner)','PC(IDC)','手機(IDC)','TV'],
-    series:[{name:'2026 YoY 出貨成長 (%)',color:C.blue,data:[17.8,25.3,2.6,-11.5,-12.9,0.4]}],
+    labels:['半導體\nIDC收入','PC\nGartner','PC\nIDC','手機\nGartner','手機\nIDC','手機\nCounterpoint'],
+    series:[{name:'2026 YoY / 修正幅度 (%)',color:C.blue,data:[52.8,-10.4,-11.3,-8.4,-12.9,-12.4]}],
     unit:'%',h:300,fmt:v=>v
   });
   donut('chart-aishare',{data:[
@@ -1411,21 +1454,21 @@ function buildCharts(){
       {label:'中低階手機',lo:25,hi:35,text:'25–35%',color:C.red},
     ],unit:'%',h:280
   });
-  lineChart('chart-aipc',{
-    labels:['2023','2024','2025','2026','2027','2028'],
+  barChart('chart-aipc',{
+    labels:['2025\n實際/估','2026\n舊預估','2028\n修正里程碑'],
     series:[
-      {name:'AI PC 滲透率',color:C.blue,data:[15,20,39,57,79,98]},
-    ],unit:'%',h:300,yMin:0
+      {name:'AI PC 滲透率 / 里程碑',color:C.blue,data:[31,55,50]},
+    ],unit:'%',h:300
   });
   // phone: dual concept — show shipment index & ASP & value via grouped (normalized note in tooltip)
   barChart('chart-phone',{
-    labels:['出貨量 YoY','ASP YoY'],
+    labels:['IDC出貨\nYoY','Gartner價格\nYoY','IDC收入\nYoY'],
     series:[
-      {name:'2026 變化 (%)',color:C.blue,data:[-12.9,14]},
+      {name:'2026 變化 (%)',color:C.blue,data:[-12.9,13,-0.5]},
     ],unit:'%',h:240
   });
   document.getElementById('chart-phone').insertAdjacentHTML('beforeend',
-    '<div style="font-size:.78rem;color:#8b949e;margin-top:6px">市場總值約 <b style="color:#58a6ff">5,789 億美元</b>創歷史新高（量縮但值增）；出貨約 11 億支為十年最低。</div>');
+    '<div style="font-size:.78rem;color:#8b949e;margin-top:6px">IDC：2026 智慧手機出貨 -12.9%、收入 -0.5%；Gartner：記憶體成本推升手機價格約 +13%；Counterpoint：出貨 -12.4%。</div>');
   lineChart('chart-apple',{
     labels:['2024','2025','2026F','2027F'],
     series:[
@@ -1466,7 +1509,7 @@ function buildCharts(){
   // semiconductor revenue
   lineChart('chart-semi',{
     labels:['2019','2020','2021','2022','2023','2024','2025','2026E'],
-    series:[{name:'全球半導體銷售（十億美元）',color:C.blue,data:[412,440,555,574,527,628,796,1000]}],
+    series:[{name:'全球半導體營收/銷售（十億美元）',color:C.blue,data:[412,440,555,574,527,628,843,1290]}],
     unit:'B',h:300,yMin:0
   });
   barChart('chart-pccycle',{
