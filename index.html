@@ -182,6 +182,47 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 .disc-show{background:var(--bg2);border:1px solid var(--yellowb);border-radius:10px;padding:14px 18px;font-size:.8rem;color:var(--tx2);margin:18px 0}
 .tooltip{position:fixed;pointer-events:none;background:#000;border:1px solid var(--bd);border-radius:8px;padding:8px 11px;font-size:.78rem;color:var(--tx);z-index:999;opacity:0;transition:opacity .1s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.5)}
 .src{font-size:.72rem;color:var(--tx2);opacity:.65;margin-top:-8px;margin-bottom:14px}
+
+/* ===== ✦ polish layer (additive, frontend-design pass) ===== */
+/* atmospheric depth — layered radial glows behind everything */
+body{position:relative;background:var(--bg)}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 12% -5%, rgba(88,166,255,.10), transparent 60%),
+    radial-gradient(800px 600px at 100% 8%, rgba(188,140,255,.08), transparent 55%),
+    radial-gradient(1000px 700px at 50% 115%, rgba(63,185,80,.06), transparent 60%);}
+/* faint grain overlay for texture (inline SVG noise, no external file) */
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+
+/* refined section heading: accent bar + tighter eyebrow */
+.sec-num{display:inline-block;position:relative;padding-left:14px}
+.sec-num::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue)}
+section>h2.sh{background:linear-gradient(90deg,var(--tx3),var(--tx3));-webkit-background-clip:text;background-clip:text;
+  border-bottom:none;padding-bottom:14px;position:relative}
+section>h2.sh::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:linear-gradient(90deg,var(--bd) 0%,var(--bd) 70%,transparent 100%)}
+
+/* tactile cards — subtle lift + glow on hover */
+.card,.scard,.callout,.chart-wrap{transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,border-color .22s}
+.card:hover,.scard:hover{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 8px 26px -10px rgba(88,166,255,.28)}
+
+/* orchestrated page-load reveal — staggered fade-up (opacity/translate only, charts measure fine) */
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero,main>section{animation:riseIn .6s cubic-bezier(.2,.7,.3,1) both}
+.hero{animation-delay:.02s}
+main>section:nth-of-type(1){animation-delay:.06s}
+main>section:nth-of-type(2){animation-delay:.10s}
+main>section:nth-of-type(3){animation-delay:.14s}
+main>section:nth-of-type(4){animation-delay:.18s}
+main>section:nth-of-type(n+5){animation-delay:.22s}
+nav.toc a{transition:all .15s,padding-left .15s}
+nav.toc a:hover{padding-left:14px}
+@media(prefers-reduced-motion:reduce){
+  .hero,main>section{animation:none}
+  .card:hover,.scard:hover{transform:none}
+}
 </style>
 </head>
 <body>
@@ -1002,7 +1043,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       <tr><td>2458</td><td><b>義隆</b></td><td>NB 觸控板 / HID</td><td>2025 GM 48.6%、EPS 8.53；AI PC 換機＋HID 規格升級為雙引擎，1Q26 GM 指引 46.5–49.5%（相對穩健）</td></tr>
       <tr><td>4961</td><td><b>天鈺</b></td><td>驅動 IC、PMIC、低階顯示</td><td>分客戶調價、與客戶談成本分攤</td></tr>
       <tr><td>6202</td><td><b>盛群</b></td><td>消費/家電 MCU</td><td>2025 轉盈 EPS 0.76；市況回溫、部分訂單能見度到年底，漲價醞釀中</td></tr>
-      <tr><td>4952 / 5471</td><td><b>凌通 / 松翰</b></td><td>消費 MCU、玩具、低階</td><td>MCU 族群回溫，2026 看好；漲價題材醞釀</td></tr>
+      <tr><td>4952 / 5471</td><td><b>凌通 / 松翰</b></td><td>消費 MCU、玩具、低階</td><td>MCU 族群回溫、2026 看好、漲價醞釀；<b>松翰</b>消費 MCU 短期挑戰，轉攻<b>無人機圖傳 IC</b>（軍民兩用，對接國防部 2026–27 逾 4.8 萬架採購案）找新動能</td></tr>
       <tr><td>2436 / 3588 / 6138</td><td><b>偉詮電 / 通嘉 / 茂達</b></td><td>電源/周邊/類比 IC</td><td>成本推升的「漲價潮」（非需求拉動）；通嘉受標案空窗＋記憶體漲價干擾</td></tr>
       <tr><td>2409 / 3481</td><td><b>友達 / 群創</b></td><td>TV/消費面板</td><td>面板需求轉冷、記憶體漲價排擠消費；2026 估接近損益兩平（友達恐小虧），轉型車用、Micro LED、FOPLP/CPO 求重估</td></tr>
       <tr><td>4938</td><td><b>和碩</b></td><td>手機/消費 EMS</td><td><b>受傷方</b>：記憶體缺料下<b>難搶到足量供應</b>、AI 進度落後同業</td></tr>
@@ -1055,7 +1096,7 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
     <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">電源供應器 / 充電</span><span class="sc-tag bg">AI 受惠</span></div><div class="sc-codes"><b>台達電 2308</b> · <b>光寶 2301</b> · <b>群電 6412</b> · <b>康舒 6282</b> · <b>全漢 3015</b> · <b>僑威 3078</b></div><div class="sc-desc">AI 伺服器高瓦數電源是主驅動；全漢偏 PC 電源隨景氣</div></div>
     <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">網通 / 消費通訊</span><span class="sc-tag bg">轉單+WiFi7</span></div><div class="sc-codes"><b>友訊 2332</b> · <b>中磊 5388</b> · <b>啟碁 6285</b> · <b>智易 3596</b> · <b>明泰 3380</b> · <b>正文 4906</b> · <b>神準 3558</b></div><div class="sc-desc">受惠 TP-Link 潛在禁令轉單＋Wi-Fi 7 滲透（屬連接升級，非 AI 運算財）</div></div>
     <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">相機 / 光學</span><span class="sc-tag bg">規格升級</span></div><div class="sc-codes"><b>玉晶光 3406</b> · <b>亞光 3019</b> · <b>先進光 3362</b> · <b>今國光 6209</b> · <b>華晶科 3059</b></div><div class="sc-desc">AI 手機鏡頭升級＋AR/MR 拉抬；華晶科偏消費影像循環</div></div>
-    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">被動元件 / 連接器</span><span class="sc-tag bg">結構復甦</span></div><div class="sc-codes"><b>國巨 2327</b> · <b>華新科 2492</b> · <b>禾伸堂 3026</b> · <b>台慶科 3357</b> · <b>千如 3236</b> · <b>正崴 2392</b> · <b>貿聯-KY 3665</b> · <b>信邦 3023</b> · <b>詮欣 6205</b> · <b>凡甲 3526</b></div><div class="sc-desc">MLCC/電阻漲價＋AI/車用高階需求；台慶科供 DDR5/TLVR 電感、凡甲伺服器連接器；正崴隨手機循環</div></div>
+    <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">被動元件 / 連接器</span><span class="sc-tag bg">結構復甦</span></div><div class="sc-codes"><b>國巨 2327</b> · <b>華新科 2492</b> · <b>禾伸堂 3026</b> · <b>台慶科 3357</b> · <b>千如 3236</b> · <b>正崴 2392</b> · <b>貿聯-KY 3665</b> · <b>信邦 3023</b> · <b>詮欣 6205</b> · <b>凡甲 3526</b></div><div class="sc-desc">MLCC/電阻漲價＋AI/車用高階需求；<b>國巨</b>法說：MLCC 健康上升、通路低庫存無搶料，漲價針對消費/車用失衡品，主動能是 AI（占比拚破 15%）；<b>華新科</b>：一般手機/PC 零件仍衰退，成長重心轉 AI 伺服器電源（AI 占比 ~10%、明年拚翻倍）＋車用；台慶科供 DDR5/TLVR 電感、凡甲伺服器連接器；正崴隨手機循環</div></div>
     <div class="scard" style="border-left-color:var(--blue)"><div class="sc-top"><span class="sc-nm">記憶體模組 / 控制 IC（補充）</span><span class="sc-tag bb">缺料受惠</span></div><div class="sc-codes"><b>點序 6485</b> · <b>安國 8054</b>（＋威剛/十銓/創見/宇瞻/群聯/慧榮/鈺創）</div><div class="sc-desc">NAND 控制 IC；點序轉工控、毛利率提升擺脫消費波動（鑫創 3259 已轉以 MEMS 麥克風/音訊為主，另計）</div></div>
     <div class="scard" style="border-left-color:var(--yellow)"><div class="sc-top"><span class="sc-nm">TV / 組裝</span><span class="sc-tag by">轉型</span></div><div class="sc-codes"><b>瑞軒 2489</b> · <b>鴻海 2317</b></div><div class="sc-desc">瑞軒拉高電競/視訊會議等高價值比重；鴻海消費承壓、AI 伺服器主驅動</div></div>
     <div class="scard" style="border-left-color:var(--green)"><div class="sc-top"><span class="sc-nm">音訊 / 電聲</span><span class="sc-tag bg">TWS 回溫</span></div><div class="sc-codes"><b>美律 2439</b> · <b>致伸 4915</b> · <b>鈺太 6679</b></div><div class="sc-desc">TWS、麥克風、OTC 助聽；美律新客戶＋醫療帶動</div></div>
@@ -1096,6 +1137,24 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
   <span class="sec-num">★ 延伸分析 · 真實股價 × 驅動拆解</span>
   <h2 class="sh">底部消費復甦選擇權：誰還趴著、要等什麼信號</h2>
   <p>AI 伺服器/HBM 鏈早就漲過了。真正「<strong>還在底部、且本質是消費需求槓桿</strong>」的,是那些被弱消費＋記憶體成本夾殺、股價沒被 AI 行情拉起來的落後股。但<em>股價在漲不等於消費復甦</em>——很多其實是被別的題材重估(如群創＝玻璃基板/FOPLP 封裝)。所以這裡用「<b>股價區間位置(查 TWSE)</b> × <b>現在到底什麼在驅動(查法說/新聞)</b>」兩條件交叉篩。</p>
+
+  <div class="callout co-yellow"><span class="ct">⚠ 誠實校準：2026「不是」乾淨的消費單量復甦（多來源交叉查證）</span>
+    <p style="font-size:.9rem;margin:.2rem 0 .5rem">把這份「選擇權」講白：2026 真正在上行的是<strong>記憶體超級循環＋單機 AI 含量</strong>（金額/ASP），而非主流終端的<strong>出貨量</strong>。記憶體漲價同時墊高 BOM、壓抑消費負擔能力——這是「金額升、單量平到降」的結構性背離。</p>
+    <div class="grid g2">
+      <ul class="clist">
+        <li>📱 智慧手機 2026：<b>IDC −0.9%</b>（情境最深至 −13%）、<b>Counterpoint −2.1%</b>——皆歸因記憶體成本墊高 BOM，非需求轉強</li>
+        <li>💻 PC：2025 強（<b>Gartner +9.1%</b>，AI PC 滲透 ~31%→~55%），但 <b>IDC 估 2026 −11.3%</b>（記憶體成本反轉）</li>
+        <li>🧠 記憶體（擺盪主因）：<b>Q1'26 DRAM 合約價 +90–95% QoQ</b>、NAND +55–60%；<b>WSTS 記憶體 +39%</b>；缺貨延續 2026</li>
+      </ul>
+      <ul class="clist">
+        <li>📺 TV 分歧：<b>TrendForce −0.6%</b> vs <b>Omdia ~+1%</b>（世足提振，面積年增 ~6%）</li>
+        <li>⌚ 真正的拐點只在利基：<b>智慧眼鏡 +110% YoY</b>、智慧戒指 ~+49%；TWS/手錶 2026 反趨平到小減</li>
+        <li>💰 半導體逼近 <b>$1 兆(+25%)</b> 靠 AI 邏輯＋記憶體報價，<span class="neg">不是</span>消費單量</li>
+        <li class="arr">推論：台股上行偏「記憶體鄰接＋AI 含量加值供應商」，而非廣泛消費需求反彈——選股請扣住此前提</li>
+      </ul>
+    </div>
+    <div style="font-size:.74rem;color:var(--tx2);margin-top:.4rem">來源（各≥2 家交叉）：IDC、Counterpoint、Gartner、TrendForce、Omdia、WSTS/SIA（2025Q4–2026 預估，數據逐日/逐月修正，請以最新為準）。</div>
+  </div>
 
   <div class="chart-wrap">
     <div class="ctit">消費電子個股區間位置（2024–2026，0%＝在區間低點、100%＝在區間高點）</div>
@@ -1142,52 +1201,52 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
 <!-- ===== S10V 估值對照 ===== -->
 <section id="sval">
   <span class="sec-num">★ 延伸分析 · 估值對照</span>
-  <h2 class="sh">估值對照：官方本益比／淨值比現況（資料日 2026/05/25）</h2>
-  <p>下表所有 <b>本益比(P/E)、股價淨值比(P/B)</b> 皆<strong>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API</strong>（每日更新），非人工估算。明顯對照：<b>AI/ASIC、被動元件</b>估值高（信驊 PB 112、世芯 9.3、國巨 8.5）；<b>消費 IC/PC/面板價值股</b>估值低（友達 1.2、敦泰 1.5、群創 1.7、華碩 1.8）。<span class="hl">估值會每日變動，請以即時為準；可重跑 verify_stocks.py 更新。</span></p>
+  <h2 class="sh">估值對照：官方本益比／淨值比現況（資料日 2026/05/26）</h2>
+  <p>下表所有 <b>本益比(P/E)、股價淨值比(P/B)</b> 皆<strong>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API</strong>（每日更新），非人工估算。明顯對照：<b>AI/ASIC、被動元件</b>估值高（信驊 PB 109、世芯 8.8、國巨 8.2）；<b>消費 IC/PC/面板價值股</b>估值低（友達 1.1、敦泰 1.5、群創 1.6、華碩 1.8）。<span class="hl">估值會每日變動，請以即時為準；可重跑 verify_stocks.py 更新。</span></p>
   <div class="chart-wrap">
-    <div class="ctit">各股官方股價淨值比 P/B（2026/05/25，TWSE/TPEx）</div>
-    <div class="csub">官方現值，非歷史位階估算。註：P/B 因產業而異、跨業不可直接比較；高 P/B 多為 AI/高成長股（信驊 112 已破表、未入圖）</div>
+    <div class="ctit">各股官方股價淨值比 P/B（2026/05/26，TWSE/TPEx）</div>
+    <div class="csub">官方現值，非歷史位階估算。註：P/B 因產業而異、跨業不可直接比較；高 P/B 多為 AI/高成長股（信驊 109 已破表、未入圖）</div>
     <div id="chart-val"></div>
   </div>
   <div class="scroll"><table>
     <thead><tr><th>群組</th><th>代表股</th><th class="c">現 P/E</th><th class="c">現 P/B</th><th>相對評價（研判）</th></tr></thead>
     <tbody>
-      <tr><td rowspan="3">AI / ASIC IC</td><td>信驊 5274</td><td class="c">150.4</td><td class="c">112.4</td><td><span class="badge br">估值極端高</span>（BMC 龍頭、稀缺性溢價）</td></tr>
-      <tr><td>創意 3443</td><td class="c">159.8</td><td class="c">48.8</td><td><span class="badge br">偏貴</span></td></tr>
-      <tr><td>世芯-KY 3661</td><td class="c">71.8</td><td class="c">9.3</td><td><span class="badge by">高（AI 確定性最高）</span></td></tr>
-      <tr><td rowspan="2">被動元件</td><td>國巨 2327</td><td class="c">54.4</td><td class="c">8.5</td><td><span class="badge br">PE/PB 雙高</span></td></tr>
-      <tr><td>華新科 2492</td><td class="c">61.6</td><td class="c">2.9</td><td><span class="badge by">PE 高、PB 中</span></td></tr>
-      <tr><td rowspan="2">iPhone 鏈</td><td>鴻海 2317</td><td class="c">18.5</td><td class="c">2.1</td><td><span class="badge bb">相對合理</span>（AI 伺服器重估）</td></tr>
-      <tr><td>大立光 3008</td><td class="c">24.0</td><td class="c">2.7</td><td><span class="badge bb">相對合理</span></td></tr>
-      <tr><td rowspan="2">AI PC / 板卡</td><td>華碩 2357</td><td class="c">12.7</td><td class="c">1.8</td><td><span class="badge bg">相對低</span></td></tr>
+      <tr><td rowspan="3">AI / ASIC IC</td><td>信驊 5274</td><td class="c">146.3</td><td class="c">109.3</td><td><span class="badge br">估值極端高</span>（BMC 龍頭、稀缺性溢價）</td></tr>
+      <tr><td>創意 3443</td><td class="c">159.0</td><td class="c">48.6</td><td><span class="badge br">偏貴</span></td></tr>
+      <tr><td>世芯-KY 3661</td><td class="c">68.0</td><td class="c">8.8</td><td><span class="badge by">高（AI 確定性最高）</span></td></tr>
+      <tr><td rowspan="2">被動元件</td><td>國巨 2327</td><td class="c">52.1</td><td class="c">8.2</td><td><span class="badge br">PE/PB 雙高</span></td></tr>
+      <tr><td>華新科 2492</td><td class="c">62.9</td><td class="c">3.0</td><td><span class="badge by">PE 高、PB 中</span></td></tr>
+      <tr><td rowspan="2">iPhone 鏈</td><td>鴻海 2317</td><td class="c">18.4</td><td class="c">2.0</td><td><span class="badge bb">相對合理</span>（AI 伺服器重估）</td></tr>
+      <tr><td>大立光 3008</td><td class="c">22.9</td><td class="c">2.6</td><td><span class="badge bb">相對合理</span></td></tr>
+      <tr><td rowspan="2">AI PC / 板卡</td><td>華碩 2357</td><td class="c">12.5</td><td class="c">1.8</td><td><span class="badge bg">相對低</span></td></tr>
       <tr><td>技嘉 2376</td><td class="c">15.7</td><td class="c">3.5</td><td><span class="badge bb">合理</span></td></tr>
-      <tr><td rowspan="2">IPC</td><td>研華 2395</td><td class="c">38.7</td><td class="c">8.7</td><td><span class="badge by">高估值</span></td></tr>
-      <tr><td>樺漢 6414</td><td class="c">16.9</td><td class="c">2.0</td><td><span class="badge bg">相對低</span></td></tr>
-      <tr><td rowspan="4">消費 IC</td><td>致新 8081</td><td class="c">16.4</td><td class="c">3.4</td><td><span class="badge bb">合理</span></td></tr>
-      <tr><td>聯詠 3034</td><td class="c">20.0</td><td class="c">4.1</td><td><span class="badge bb">合理</span></td></tr>
+      <tr><td rowspan="2">IPC</td><td>研華 2395</td><td class="c">39.6</td><td class="c">8.9</td><td><span class="badge by">高估值</span></td></tr>
+      <tr><td>樺漢 6414</td><td class="c">16.5</td><td class="c">2.0</td><td><span class="badge bg">相對低</span></td></tr>
+      <tr><td rowspan="4">消費 IC</td><td>致新 8081</td><td class="c">16.6</td><td class="c">3.4</td><td><span class="badge bb">合理</span></td></tr>
+      <tr><td>聯詠 3034</td><td class="c">20.1</td><td class="c">4.2</td><td><span class="badge bb">合理</span></td></tr>
       <tr><td>敦泰 3545</td><td class="c">—（虧損）</td><td class="c">1.5</td><td><span class="badge bg">PB 相對低</span></td></tr>
-      <tr><td>瑞昱 2379</td><td class="c">21.0</td><td class="c">6.7</td><td><span class="badge by">PB 偏高</span></td></tr>
-      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">446 / 76</td><td class="c">1.73 / 1.23</td><td><span class="badge by">PB 已突破淨值（FOPLP / CPO 重估，已非跌破淨值的便宜股）</span></td></tr>
-      <tr><td>記憶體模組</td><td>威剛 3260 / 群聯 8299</td><td class="c">8.1 / 23.7</td><td class="c">4.7 / 7.4</td><td><span class="badge by">低 PE 是循環高峰獲利、搭配高 PB（價值陷阱注意）</span></td></tr>
-      <tr><td>AI 眼鏡/光學</td><td>錼創-KY 6854</td><td class="c">—（虧損）</td><td class="c">5.6</td><td><span class="badge bgray">以 PB 為準（早期、上市短）</span></td></tr>
+      <tr><td>瑞昱 2379</td><td class="c">21.2</td><td class="c">6.7</td><td><span class="badge by">PB 偏高</span></td></tr>
+      <tr><td>面板（轉型）</td><td>群創 3481 / 友達 2409</td><td class="c">415 / 69</td><td class="c">1.61 / 1.11</td><td><span class="badge by">PB 已突破淨值（FOPLP / CPO 重估，已非跌破淨值的便宜股）</span></td></tr>
+      <tr><td>記憶體模組</td><td>威剛 3260 / 群聯 8299</td><td class="c">8.2 / 24.0</td><td class="c">4.7 / 7.5</td><td><span class="badge by">低 PE 是循環高峰獲利、搭配高 PB（價值陷阱注意）</span></td></tr>
+      <tr><td>AI 眼鏡/光學</td><td>錼創-KY 6854</td><td class="c">—（虧損）</td><td class="c">5.2</td><td><span class="badge bgray">以 PB 為準（早期、上市短）</span></td></tr>
     </tbody>
   </table></div>
   <div class="grid g2">
     <div class="callout co-red" style="margin-top:0"><span class="ct">📈 官方 P/B 偏高（溢價已反映）</span>
       <ul class="clist">
-        <li><b>信驊 5274</b>（PB 112）最伸展；<b>世芯 3661</b>（9.3）、<b>研華 2395</b>（8.7）、<b>國巨 2327</b>（8.5）、<b>群聯 8299</b>（7.4）、<b>瑞昱 2379</b>（6.7）次之</li>
+        <li><b>信驊 5274</b>（PB 109）最伸展；<b>世芯 3661</b>（8.8）、<b>研華 2395</b>（8.9）、<b>國巨 2327</b>（8.2）、<b>群聯 8299</b>（7.5）、<b>瑞昱 2379</b>（6.7）次之</li>
         <li class="arr">高 P/B 多反映 AI/被動/高速介面溢價——非消費復甦,追高風險報酬比已差</li>
       </ul>
     </div>
     <div class="callout co-green" style="margin-top:0"><span class="ct">📉 官方 P/B 偏低（消費/面板/PC）</span>
       <ul class="clist">
-        <li>面板 <b>友達 1.2</b>、<b>群創 1.7</b>（皆已突破/接近淨值，非昔日深跌破）;消費/PC <b>敦泰 1.5·華碩 1.8·樺漢 2.0·大立光 2.7</b></li>
+        <li>面板 <b>友達 1.1</b>、<b>群創 1.6</b>（皆已突破/接近淨值，非昔日深跌破）;消費/PC <b>敦泰 1.5·華碩 1.8·樺漢 2.0·大立光 2.6</b></li>
         <li class="arr">低 P/B 部分屬產業結構（面板/組裝本就低 PB），非全是「便宜」；與消費槓桿並看才有意義</li>
       </ul>
     </div>
   </div>
   <div class="callout co-yellow"><span class="ct">⚠ 估值陷阱提醒（循環股）</span><b>威剛 3260、群聯 8299</b> 的低 TTM 本益比是「<b>循環高峰獲利</b>」造成,搭配偏高的 P/B——是典型「低 PE × 高 PB」的末段循環特徵,低本益比≠便宜。被動(國巨/華新科)亦有此風險。判斷時須交叉看 P/B 與遠期 EPS。</div>
-  <div class="disc">P/E、P/B <b>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API，資料日 2026/05/25</b>（每日更新；可重跑專案內 <code>verify_stocks.py</code> 抓最新官方值）。虧損股 P/E 為空（以「—（虧損）」標示）、以 P/B 判讀。估值每日變動，請以即時為準。個股僅供研究，<b>不構成投資建議</b>。</div>
+  <div class="disc">P/E、P/B <b>直接取自台灣證券交易所 TWSE／櫃買中心 TPEx 官方 API，資料日 2026/05/26</b>（每日更新；可重跑專案內 <code>verify_stocks.py</code> 抓最新官方值）。虧損股 P/E 為空（以「—（虧損）」標示）、以 P/B 判讀。估值每日變動，請以即時為準。個股僅供研究，<b>不構成投資建議</b>。</div>
 </section>
 
 <!-- ===== S11 風險 ===== -->
@@ -1558,11 +1617,11 @@ function buildCharts(){
     unit:'%',w:940,h:320
   });
   valBars('chart-val',{vmax:12,unit:'x',t1:3,t2:8,items:[
-    {label:'友達\n2409',pos:1.2},{label:'敦泰\n3545',pos:1.5},{label:'群創\n3481',pos:1.7},{label:'華碩\n2357',pos:1.8},
-    {label:'樺漢\n6414',pos:2.0},{label:'鴻海\n2317',pos:2.1},{label:'大立光\n3008',pos:2.7},{label:'華新科\n2492',pos:2.9},
-    {label:'致新\n8081',pos:3.4},{label:'技嘉\n2376',pos:3.5},{label:'聯詠\n3034',pos:4.1},{label:'威剛\n3260',pos:4.7},
-    {label:'瑞昱\n2379',pos:6.7},{label:'群聯\n8299',pos:7.4},{label:'國巨\n2327',pos:8.5},{label:'研華\n2395',pos:8.7},
-    {label:'世芯\n3661',pos:9.3}
+    {label:'友達\n2409',pos:1.1},{label:'敦泰\n3545',pos:1.5},{label:'群創\n3481',pos:1.6},{label:'華碩\n2357',pos:1.8},
+    {label:'樺漢\n6414',pos:2.0},{label:'鴻海\n2317',pos:2.0},{label:'大立光\n3008',pos:2.6},{label:'華新科\n2492',pos:3.0},
+    {label:'致新\n8081',pos:3.4},{label:'技嘉\n2376',pos:3.5},{label:'聯詠\n3034',pos:4.2},{label:'威剛\n3260',pos:4.7},
+    {label:'瑞昱\n2379',pos:6.7},{label:'群聯\n8299',pos:7.5},{label:'國巨\n2327',pos:8.2},{label:'研華\n2395',pos:8.9},
+    {label:'世芯\n3661',pos:8.8}
   ]});
   buildRoadmap();
   buildHistModule();
