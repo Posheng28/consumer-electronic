@@ -178,7 +178,8 @@ td.c,th.c{text-align:center}td.r,th.r{text-align:right}
 .cat-list .cchip-d{color:var(--yellow)}
 
 footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var(--tx2);font-size:.8rem}
-.disc{background:var(--bg2);border:1px solid var(--yellowb);border-radius:10px;padding:14px 18px;font-size:.8rem;color:var(--tx2);margin:18px 0}
+.disc{display:none}
+.disc-show{background:var(--bg2);border:1px solid var(--yellowb);border-radius:10px;padding:14px 18px;font-size:.8rem;color:var(--tx2);margin:18px 0}
 .tooltip{position:fixed;pointer-events:none;background:#000;border:1px solid var(--bd);border-radius:8px;padding:8px 11px;font-size:.78rem;color:var(--tx);z-index:999;opacity:0;transition:opacity .1s;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.5)}
 .src{font-size:.72rem;color:var(--tx2);opacity:.65;margin-top:-8px;margin-bottom:14px}
 </style>
@@ -811,12 +812,31 @@ footer{border-top:1px solid var(--bd);margin-top:50px;padding-top:24px;color:var
       </tbody>
     </table>
   </div>
-  <h4>台系 IC 設計（瑞昱、致新）：消費比重高者，毛利率先承壓</h4>
+  <h4>台系消費電子台廠：更多法說口徑（2025Q4–2026 年中）</h4>
   <div class="grid g2">
     <div class="callout co-red" style="margin-top:0"><span class="ct">瑞昱 2379｜中立</span>1Q26 PC 比重由 33% 升至 36%；1Q26 營收 364.23 億 QoQ +38.6%，但 2H26 能見度有限；記憶體報價續漲對 embedded memory 晶片毛利率形成壓力。2026 EPS 估 27.42 元（YoY -4%）。</div>
     <div class="callout co-red" style="margin-top:0"><span class="ct">致新 8081｜中立</span>終端以面板（32%）、PC（32%）、TV（16%）為主。記憶體漲價下品牌廠「降規因應」；成本上揚難全數轉嫁，毛利率有壓。2026 EPS 估 18.05 元（YoY +2%）。</div>
   </div>
-  <div class="callout co-blue"><span class="ct">法說會訊號總結</span>產業鏈沒有人在講「全面復甦」，大家講的都是<b>「AI 強、消費弱、靠漲價撐、毛利承壓、下半年看」</b>。同樣是 IC 設計，AI 關聯度高者（世芯、創意、信驊）拿買進；消費比重高者（瑞昱、致新）只拿中立。2026 年不能再用粗略的「消費／非消費」二分法，而要往「AI-ready BOM exposure」去拆。<br>👉 這裡僅舉瑞昱、致新兩檔做代表，<b>完整的消費電子台廠清單（約 60 檔、依次產業分類）見第 <a href="#s10">10.6 節</a></b>。</div>
+  <div class="scroll"><table>
+    <thead><tr><th>個股</th><th>法說 / 管理層口徑（消費電子相關）</th></tr></thead>
+    <tbody>
+      <tr><td><b>聯詠 3034</b></td><td>KGD＋封測成本因「AI 排擠」上漲，漲價<b>未必全抵</b>；1Q26 GM 39%、SoC/邊緣 AI 視覺強，但 <b>H2 能見度不明</b></td></tr>
+      <tr><td><b>矽創 8016</b></td><td>4/1 起<b>漲價約 15%</b>，反映晶圓＋封測成本「超出可控」；以 AI 邊緣、車用尋求復甦</td></tr>
+      <tr><td><b>敦泰 3545</b></td><td>領頭發動驅動 IC「<b>報價反擊</b>」，依供需與成本調整手機 TDDI 價格</td></tr>
+      <tr><td><b>天鈺 4961</b></td><td>分客戶調價、與客戶談<b>成本分攤</b>；電子紙/non-DDI 為成長，但 8 吋產能被記憶體排擠</td></tr>
+      <tr><td><b>義隆 2458</b></td><td>2025 GM 48.6%、EPS 8.53；<b>AI PC 換機＋HID 規格升級</b>雙引擎；1Q26 GM 指引 46.5–49.5%（相對穩）</td></tr>
+      <tr><td><b>盛群 6202</b></td><td>2025 轉盈 EPS 0.76；MCU 去庫存結束、<b>能見度到年底、漲價醞釀</b></td></tr>
+      <tr><td><b>凌通 4952 / 松翰 5471</b></td><td>消費 MCU 回溫，2026 看好；陸廠 MCU 漲價、跟進題材</td></tr>
+      <tr><td><b>偉詮電 2436 / 通嘉 3588 / 茂達 6138</b></td><td>成本推升的「<b>漲價潮</b>」（非需求拉動）；PMIC/MOSFET/風扇驅動隨晶圓成本走</td></tr>
+      <tr><td><b>友達 2409 / 群創 3481</b></td><td>面板需求轉冷、記憶體漲價<b>排擠消費</b>；轉型 FOPLP/車用/Micro LED/CPO 求重估</td></tr>
+      <tr><td><b>和碩 4938</b></td><td><b>受傷方</b>：記憶體缺料下<b>難搶到足量供應</b>、AI 進度落後同業</td></tr>
+      <tr><td><b>宏碁 2353 / 微星 2377 / 技嘉 2376</b></td><td>宏碁示警漲價 15–20%；微星終端漲 &gt;10% 並轉 AI 伺服器；技嘉以 AI 伺服器抵銷板卡成本</td></tr>
+      <tr><td><b>致伸 4915 / 美律 2439</b></td><td>消費周邊毛利薄（致伸 GM ~17%、美律 ~12%）；美律靠 VC/喇叭/醫療/新客，2026 開案量「非常滿」</td></tr>
+      <tr><td><b>譜瑞-KY 4966</b></td><td>顯示驅動拖累毛利，重回 &gt;45% GM 要看 <b>PCIe Gen5 retimer</b> 資料中心放量</td></tr>
+      <tr><td><b>群聯 8299 / 威剛 3260 / 十銓 4967</b></td><td><b>受惠方</b>：手握低價庫存、報價狂飆，1Q26 獲利爆發（群聯 EPS 68.8、威剛 30.05、十銓 27）</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout co-blue"><span class="ct">法說會訊號總結</span>產業鏈沒有人在講「全面復甦」，大家講的都是<b>「AI 強、消費弱、靠漲價撐、毛利承壓、下半年看」</b>。同樣是 IC 設計，AI 關聯度高者（世芯、創意、信驊）拿買進；消費比重高者（瑞昱、致新等）只拿中立。2026 年不能再用粗略的「消費／非消費」二分法，而要往「AI-ready BOM exposure」去拆。<br>👉 更完整的消費電子台廠清單（約 60 檔、依次產業分類）見第 <a href="#s10">10.6 節</a>。</div>
 </section>
 
 <!-- ===== S8 情境 ===== -->
