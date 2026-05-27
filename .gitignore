@@ -12,3 +12,10 @@
 *.tmp
 .DS_Store
 Thumbs.db
+
+# 稽核暫存（不入庫）
+_audit/
+_audit_*.txt
+_audit/
+_audit_*.txt
+_script.js
